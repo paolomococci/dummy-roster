@@ -119,3 +119,4 @@ CREATE TABLE "Invoice" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
+CREATE INDEX "InvoiceName" ON "Invoice"("Name");
