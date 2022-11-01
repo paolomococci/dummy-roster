@@ -45,7 +45,8 @@ CREATE TABLE "Supplier" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" varchar(32) NULL,
-  "Role" varchar(32) NULL
+  "Role" varchar(32) NULL,
+  "Address" varchar(64) NULL
 );
 
 -- Employee table
@@ -53,7 +54,8 @@ CREATE TABLE "Employee" (
   "Id" char(8) NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  "Address" varchar(64) NULL
 );
 
 -- Form table
@@ -78,5 +80,6 @@ CREATE TABLE "Carrier" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" varchar(32) NULL,
-  "Role" varchar(32) NULL
+  "Role" varchar(32) NULL,
+  "Address" varchar(64) NULL
 );
