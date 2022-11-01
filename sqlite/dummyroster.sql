@@ -65,6 +65,7 @@ CREATE TABLE "Employee" (
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL
 );
+CREATE INDEX "EmployeeName" ON "Employee"("Name");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
