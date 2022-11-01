@@ -118,6 +118,7 @@ CREATE TABLE "Product" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
+  "CategoryId" BIGINT NULL,
   CONSTRAINT "PK_Product" PRIMARY KEY ("Id")
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
