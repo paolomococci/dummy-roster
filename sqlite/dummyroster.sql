@@ -176,6 +176,8 @@ CREATE TABLE "Invoice" (
   CONSTRAINT "PK_Form_Details" PRIMARY KEY ("FormId", "ProductId"),
   CONSTRAINT "FK_Form_Details" FOREIGN KEY ("FormId") REFERENCES "Form" ("Id"),
   CONSTRAINT "FK_Product_Details" FOREIGN KEY ("ProductId") REFERENCES "Product" ("Id"),
+  CONSTRAINT "CK_Quantity" CHECK (Quantity > 0),
   CONSTRAINT "CK_PriceCut" CHECK (PriceCut >= 0 and PriceCut < 0.3)
+
 );
 CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
