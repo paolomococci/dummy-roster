@@ -20,7 +20,8 @@ CREATE TABLE "Customer" (
 -- Category table
 CREATE TABLE "Category" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Product table
