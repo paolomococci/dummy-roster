@@ -107,16 +107,14 @@ CREATE INDEX "ProductName" ON "Product"("Name");
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(8) NOT NULL,
-  "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL
 );
-CREATE INDEX "FormName" ON "Form"("Name");
+CREATE INDEX "FormId" ON "Form"("Id");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
   "Id" char(8) NOT NULL,
-  "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
-CREATE INDEX "InvoiceName" ON "Invoice"("Name");
+CREATE INDEX "InvoiceId" ON "Invoice"("Id");
