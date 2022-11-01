@@ -26,7 +26,8 @@ CREATE TABLE "Customer" (
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "PK_Customer" PRIMARY KEY ("Id")
 );
 CREATE INDEX "CustomerName" ON "Customer"("Name");
 
