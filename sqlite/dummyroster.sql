@@ -31,6 +31,7 @@ CREATE TABLE "Customer" (
 );
 CREATE INDEX "CustomerName" ON "Customer"("Name");
 CREATE INDEX "CustomerCity" ON "Customer"("City");
+CREATE INDEX "PostcodeCustomer" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
