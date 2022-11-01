@@ -156,13 +156,13 @@ CREATE TABLE "Form" (
   CONSTRAINT "FK_Form_Carrier" FOREIGN KEY ("CarrierId") REFERENCES "Carrier" ("Id"),
   CONSTRAINT "FK_Form_Employee" FOREIGN KEY ("EmployeeId") REFERENCES "Employee" ("Id")
 );
-CREATE INDEX "FormId" ON "Form"("Id");
-CREATE INDEX "CustomerId" ON "Form"("CustomerId");
-CREATE INDEX "CarrierId" ON "Form"("CarrierId");
-CREATE INDEX "EmployeeId" ON "Form"("EmployeeId");
-CREATE INDEX "FormDate" ON "Form"("FormDate");
-CREATE INDEX "RequiredDate" ON "Form"("RequiredDate");
-CREATE INDEX "PromisedDate" ON "Form"("PromisedDate");
+CREATE INDEX "IDX_FormId" ON "Form"("Id");
+CREATE INDEX "IDX_CustomerId" ON "Form"("CustomerId");
+CREATE INDEX "IDX_CarrierId" ON "Form"("CarrierId");
+CREATE INDEX "IDX_EmployeeId" ON "Form"("EmployeeId");
+CREATE INDEX "IDX_FormDate" ON "Form"("FormDate");
+CREATE INDEX "IDX_RequiredDate" ON "Form"("RequiredDate");
+CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
@@ -171,4 +171,4 @@ CREATE TABLE "Invoice" (
   "Picture" BLOB NULL,
   CONSTRAINT "PK_Invoice" PRIMARY KEY ("Id")
 );
-CREATE INDEX "InvoiceId" ON "Invoice"("Id");
+CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
