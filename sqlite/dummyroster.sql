@@ -120,6 +120,7 @@ CREATE TABLE "Product" (
   "Picture" BLOB NULL,
   "CategoryId" BIGINT NULL,
   "SupplierId" BIGINT NULL,
+  "QuantityPerUnit" varchar(24) NULL,
   CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id"),
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id")
