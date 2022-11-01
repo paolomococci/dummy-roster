@@ -134,11 +134,11 @@ CREATE TABLE "Product" (
   CONSTRAINT "CK_UnitsOnOrder" CHECK (UnitsOnOrder >= 0),
   CONSTRAINT "CK_ReorderLevel" CHECK (ReorderLevel >= 0)
 );
-CREATE INDEX "ProductName" ON "Product"("Name");
-CREATE INDEX "CategoryId" ON "Product"("CategoryId");
-CREATE INDEX "ProductBelongingCategory" ON "Product"("CategoryId");
-CREATE INDEX "SupplierId" ON "Product"("SupplierId");
-CREATE INDEX "ProductSuppliedBy" ON "Product"("SupplierId");
+CREATE INDEX "IDX_ProductName" ON "Product"("Name");
+CREATE INDEX "IDX_CategoryId" ON "Product"("CategoryId");
+CREATE INDEX "IDX_ProductBelongingCategory" ON "Product"("CategoryId");
+CREATE INDEX "IDX_SupplierId" ON "Product"("SupplierId");
+CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
