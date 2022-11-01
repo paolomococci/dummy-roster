@@ -119,7 +119,8 @@ CREATE TABLE "Product" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "CategoryId" BIGINT NULL,
-  CONSTRAINT "PK_Product" PRIMARY KEY ("Id")
+  CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
+  CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryID") REFERENCES "Category" ("Id")
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
 
