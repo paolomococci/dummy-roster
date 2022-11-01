@@ -135,6 +135,7 @@ CREATE TABLE "Product" (
   CONSTRAINT "CK_ReorderLevel" CHECK (ReorderLevel >= 0)
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
+CREATE INDEX "CategoryId" ON "Product"("CategoryId");
 CREATE INDEX "ProductBelongingCategory" ON "Product"("CategoryId");
 
 -- Form table
