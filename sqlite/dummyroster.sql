@@ -47,6 +47,7 @@ CREATE TABLE "Supplier" (
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL
 );
+CREATE INDEX "SupplierName" ON "Supplier"("Name");
 
 -- Employee table
 CREATE TABLE "Employee" (
