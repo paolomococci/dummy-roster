@@ -138,6 +138,7 @@ CREATE INDEX "ProductName" ON "Product"("Name");
 CREATE INDEX "CategoryId" ON "Product"("CategoryId");
 CREATE INDEX "ProductBelongingCategory" ON "Product"("CategoryId");
 CREATE INDEX "SupplierId" ON "Product"("SupplierId");
+CREATE INDEX "ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
