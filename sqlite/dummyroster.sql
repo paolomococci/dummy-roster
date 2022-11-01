@@ -147,6 +147,7 @@ CREATE TABLE "Form" (
   "CustomerId" BIGINT NULL,
   "CarrierId" BIGINT NULL,
   "EmployeeId" BIGINT NULL,
+  "RequiredDate" DATETIME NULL,
   CONSTRAINT "PK_Form" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Form_Customer" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id"),
   CONSTRAINT "FK_Form_Carrier" FOREIGN KEY ("CarrierId") REFERENCES "Carrier" ("Id"),
