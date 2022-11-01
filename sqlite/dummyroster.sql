@@ -1,4 +1,6 @@
--- dummyroster.sql-- drop tables if exists
+-- dummyroster.sql for SQLite
+
+-- drop tables if exists
 
 DROP TABLE IF EXISTS "Customer";
 DROP TABLE IF EXISTS "Category";
@@ -8,6 +10,9 @@ DROP TABLE IF EXISTS "Employee";
 DROP TABLE IF EXISTS "Form";
 DROP TABLE IF EXISTS "Invoice";
 DROP TABLE IF EXISTS "Carrier";
+
+-- Customer table
+CREATE TABLE "Customer" ();
 
 -- Category table
 CREATE TABLE "Category" ();
