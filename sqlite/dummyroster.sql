@@ -43,7 +43,8 @@ CREATE TABLE "Supplier" (
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
 );
 
 -- Employee table
@@ -59,7 +60,8 @@ CREATE TABLE "Employee" (
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
 );
 
 -- Carrier table
@@ -76,7 +78,8 @@ CREATE TABLE "Carrier" (
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
 );
 
 -- Category table
