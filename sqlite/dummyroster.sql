@@ -46,7 +46,8 @@ CREATE TABLE "Supplier" (
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "PK_Supplier" PRIMARY KEY ("Id")
 );
 CREATE INDEX "SupplierName" ON "Supplier"("Name");
 
@@ -64,7 +65,8 @@ CREATE TABLE "Employee" (
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
 );
 CREATE INDEX "EmployeeName" ON "Employee"("Name");
 
@@ -83,7 +85,8 @@ CREATE TABLE "Carrier" (
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id")
 );
 CREATE INDEX "CarrierName" ON "Carrier"("Name");
 
@@ -92,7 +95,8 @@ CREATE TABLE "Category" (
   "Id" char(8) NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  CONSTRAINT "PK_Category" PRIMARY KEY ("Id")
 );
 CREATE INDEX "CategoryName" ON "Category"("Name");
 
@@ -101,14 +105,16 @@ CREATE TABLE "Product" (
   "Id" char(8) NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  CONSTRAINT "PK_Product" PRIMARY KEY ("Id")
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
 
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(8) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  CONSTRAINT "PK_Form" PRIMARY KEY ("Id")
 );
 CREATE INDEX "FormId" ON "Form"("Id");
 
@@ -116,6 +122,7 @@ CREATE INDEX "FormId" ON "Form"("Id");
 CREATE TABLE "Invoice" (
   "Id" char(8) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  CONSTRAINT "PK_Invoice" PRIMARY KEY ("Id")
 );
 CREATE INDEX "InvoiceId" ON "Invoice"("Id");
