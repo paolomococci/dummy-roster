@@ -97,10 +97,10 @@ CREATE TABLE "Carrier" (
   "Fax" varchar(24) NULL,
   CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id")
 );
-CREATE INDEX "CarrierName" ON "Carrier"("Name");
-CREATE INDEX "CarrierCity" ON "Carrier"("City");
-CREATE INDEX "CarrierDistrict" ON "Carrier"("District");
-CREATE INDEX "CarrierPostcode" ON "Carrier"("Postcode");
+CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
+CREATE INDEX "IDX_CarrierCity" ON "Carrier"("City");
+CREATE INDEX "IDX_CarrierDistrict" ON "Carrier"("District");
+CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
