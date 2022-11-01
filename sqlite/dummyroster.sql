@@ -102,6 +102,7 @@ CREATE TABLE "Product" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
+CREATE INDEX "ProductName" ON "Product"("Name");
 
 -- Form table
 CREATE TABLE "Form" (
