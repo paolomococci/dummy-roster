@@ -182,3 +182,4 @@ CREATE TABLE "Invoice" (
 
 );
 CREATE INDEX "IDX_FormId" ON "Invoice"("FormId");
+CREATE INDEX "IDX_ProductId" ON "Invoice"("ProductId");
