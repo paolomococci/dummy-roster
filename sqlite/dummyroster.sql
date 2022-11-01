@@ -55,6 +55,7 @@ CREATE TABLE "Employee" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
+  "Role" varchar(32) NULL,
   "Address" varchar(64) NULL
 );
 
