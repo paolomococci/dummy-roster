@@ -89,6 +89,7 @@ CREATE TABLE "Category" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
+CREATE INDEX "CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
