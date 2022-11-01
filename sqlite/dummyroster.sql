@@ -14,7 +14,8 @@ DROP TABLE IF EXISTS "Carrier";
 -- Customer table
 CREATE TABLE "Customer" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Category table
@@ -27,35 +28,41 @@ CREATE TABLE "Category" (
 -- Product table
 CREATE TABLE "Product" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Supplier table
 CREATE TABLE "Supplier" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Invoice table
 CREATE TABLE "Invoice" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
 
 -- Carrier table
 CREATE TABLE "Carrier" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL
+  "Name" varchar (40) NOT NULL,
+  "Description" TEXT NULL
 );
