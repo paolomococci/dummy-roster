@@ -28,3 +28,6 @@ CREATE TABLE "Employee" ();
 
 -- Form table
 CREATE TABLE "Form" ();
+
+-- Invoice table
+CREATE TABLE "Invoice" ();
