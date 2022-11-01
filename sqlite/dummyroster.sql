@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS "Invoice";
 
 -- Customer table
 CREATE TABLE "Customer" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -36,7 +36,7 @@ CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -59,7 +59,7 @@ CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Employee table
 CREATE TABLE "Employee" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -81,7 +81,7 @@ CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -104,7 +104,7 @@ CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -114,7 +114,7 @@ CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -142,7 +142,7 @@ CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Description" TEXT NULL,
   "CustomerId" BIGINT NULL,
   "CarrierId" BIGINT NULL,
@@ -166,7 +166,7 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Id" char(8) NOT NULL,
+  "Id" BIGINT NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   CONSTRAINT "PK_Invoice" PRIMARY KEY ("Id")
