@@ -144,6 +144,7 @@ CREATE INDEX "ProductSuppliedBy" ON "Product"("SupplierId");
 CREATE TABLE "Form" (
   "Id" char(8) NOT NULL,
   "Description" TEXT NULL,
+  "CustomerId" BIGINT NULL,
   "EmployeeId" BIGINT NULL,
   CONSTRAINT "PK_Form" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Form_Employee" FOREIGN KEY ("EmployeeId") REFERENCES "Employee" ("Id")
