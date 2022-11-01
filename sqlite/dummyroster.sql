@@ -156,6 +156,7 @@ CREATE TABLE "Form" (
   CONSTRAINT "FK_Form_Employee" FOREIGN KEY ("EmployeeId") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "FormId" ON "Form"("Id");
+CREATE INDEX "CustomerId" ON "Form"("CustomerId");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
