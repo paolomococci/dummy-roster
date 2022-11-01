@@ -41,7 +41,8 @@ CREATE TABLE "Supplier" (
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
-  "Email" varchar(48) NULL
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL
 );
 
 -- Employee table
@@ -56,7 +57,8 @@ CREATE TABLE "Employee" (
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
-  "Email" varchar(48) NULL
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL
 );
 
 -- Carrier table
@@ -72,7 +74,8 @@ CREATE TABLE "Carrier" (
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
-  "Email" varchar(48) NULL
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL
 );
 
 -- Category table
