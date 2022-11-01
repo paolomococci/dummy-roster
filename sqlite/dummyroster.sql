@@ -52,10 +52,10 @@ CREATE TABLE "Supplier" (
   "Fax" varchar(24) NULL,
   CONSTRAINT "PK_Supplier" PRIMARY KEY ("Id")
 );
-CREATE INDEX "SupplierName" ON "Supplier"("Name");
-CREATE INDEX "SupplierCity" ON "Supplier"("City");
-CREATE INDEX "SupplierDistrict" ON "Supplier"("District");
-CREATE INDEX "SupplierPostcode" ON "Supplier"("Postcode");
+CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
+CREATE INDEX "IDX_SupplierCity" ON "Supplier"("City");
+CREATE INDEX "IDX_SupplierDistrict" ON "Supplier"("District");
+CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Employee table
 CREATE TABLE "Employee" (
