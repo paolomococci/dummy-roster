@@ -75,6 +75,9 @@ CREATE TABLE "Employee" (
   CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
 );
 CREATE INDEX "EmployeeName" ON "Employee"("Name");
+CREATE INDEX "EmployeeCity" ON "Employee"("City");
+CREATE INDEX "EmployeeDistrict" ON "Employee"("District");
+CREATE INDEX "EmployeePostcode" ON "Employee"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
