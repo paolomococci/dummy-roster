@@ -29,10 +29,10 @@ CREATE TABLE "Customer" (
   "Fax" varchar(24) NULL,
   CONSTRAINT "PK_Customer" PRIMARY KEY ("Id")
 );
-CREATE INDEX "CustomerName" ON "Customer"("Name");
-CREATE INDEX "CustomerCity" ON "Customer"("City");
-CREATE INDEX "CustomerDistrict" ON "Customer"("District");
-CREATE INDEX "CustomerPostcode" ON "Customer"("Postcode");
+CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
+CREATE INDEX "IDX_CustomerCity" ON "Customer"("City");
+CREATE INDEX "IDX_CustomerDistrict" ON "Customer"("District");
+CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
