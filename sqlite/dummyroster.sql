@@ -174,6 +174,7 @@ CREATE TABLE "Invoice" (
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
   "PriceCut" REAL NOT NULL CONSTRAINT "DF_Form_Details_PriceCut" DEFAULT (0),
   CONSTRAINT "PK_Form_Details" PRIMARY KEY ("FormId", "ProductId"),
-  CONSTRAINT "FK_Form_Details" FOREIGN KEY ("FormId") REFERENCES "Form" ("FormId")
+  CONSTRAINT "FK_Form_Details" FOREIGN KEY ("FormId") REFERENCES "Form" ("Id"),
+  CONSTRAINT "FK_Product_Details" FOREIGN KEY ("ProductId") REFERENCES "Product" ("Id")
 );
 CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
