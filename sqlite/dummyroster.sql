@@ -20,34 +20,41 @@ CREATE TABLE "Customer" (
 -- Category table
 CREATE TABLE "Category" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Product table
 CREATE TABLE "Product" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Supplier table
 CREATE TABLE "Supplier" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Invoice table
 CREATE TABLE "Invoice" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Carrier table
 CREATE TABLE "Carrier" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
