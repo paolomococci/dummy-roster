@@ -125,6 +125,7 @@ CREATE TABLE "Product" (
   "UnitsInStock" SMALLINT NULL CONSTRAINT "DF_Product_UnitsInStock" DEFAULT (0),
   "UnitsOnOrder" SMALLINT NULL CONSTRAINT "DF_Product_UnitsOnOrder" DEFAULT (0),
   "ReorderLevel" SMALLINT NULL CONSTRAINT "DF_Product_ReorderLevel" DEFAULT (0),
+  "Discontinued" TINYINT NOT NULL CONSTRAINT "DF_Product_Discontinued" DEFAULT (0),
   CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id"),
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id")
