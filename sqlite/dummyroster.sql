@@ -31,3 +31,6 @@ CREATE TABLE "Form" ();
 
 -- Invoice table
 CREATE TABLE "Invoice" ();
+
+-- Carrier table
+CREATE TABLE "Carrier" ();
