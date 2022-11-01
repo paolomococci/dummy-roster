@@ -30,6 +30,7 @@ CREATE TABLE "Customer" (
   CONSTRAINT "PK_Customer" PRIMARY KEY ("Id")
 );
 CREATE INDEX "CustomerName" ON "Customer"("Name");
+CREATE INDEX "CustomerCity" ON "Customer"("City");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
