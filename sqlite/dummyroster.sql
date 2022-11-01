@@ -149,6 +149,7 @@ CREATE TABLE "Form" (
   "EmployeeId" BIGINT NULL,
   "RequiredDate" DATETIME NULL,
   "PromisedDate" DATETIME NULL,
+  "ShippingCost" REAL NULL CONSTRAINT "DF_Form_ShippingCost" DEFAULT (0),
   CONSTRAINT "PK_Form" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Form_Customer" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id"),
   CONSTRAINT "FK_Form_Carrier" FOREIGN KEY ("CarrierId") REFERENCES "Carrier" ("Id"),
