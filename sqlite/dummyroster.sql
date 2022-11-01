@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS "Carrier";
 -- Customer table
 CREATE TABLE "Customer" (
   "Id" char(5) NOT NULL,
+  "Name" varchar (40) NOT NULL
 );
 
 -- Category table
