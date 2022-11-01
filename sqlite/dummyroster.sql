@@ -131,7 +131,8 @@ CREATE TABLE "Product" (
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id"),
   CONSTRAINT "CK_Product_UnitPrice" CHECK (UnitPrice >= 0),
   CONSTRAINT "CK_UnitsInStock" CHECK (UnitsInStock >= 0),
-  CONSTRAINT "CK_UnitsOnOrder" CHECK (UnitsOnOrder >= 0)
+  CONSTRAINT "CK_UnitsOnOrder" CHECK (UnitsOnOrder >= 0),
+  CONSTRAINT "CK_ReorderLevel" CHECK (ReorderLevel >= 0)
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
 
