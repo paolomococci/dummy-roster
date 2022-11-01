@@ -147,6 +147,7 @@ CREATE TABLE "Form" (
   "CustomerId" BIGINT NULL,
   "EmployeeId" BIGINT NULL,
   CONSTRAINT "PK_Form" PRIMARY KEY ("Id"),
+  CONSTRAINT "FK_Form_Customer" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id"),
   CONSTRAINT "FK_Form_Employee" FOREIGN KEY ("EmployeeId") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "FormId" ON "Form"("Id");
