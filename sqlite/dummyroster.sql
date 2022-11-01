@@ -160,6 +160,7 @@ CREATE INDEX "FormId" ON "Form"("Id");
 CREATE INDEX "CustomerId" ON "Form"("CustomerId");
 CREATE INDEX "CarrierId" ON "Form"("CarrierId");
 CREATE INDEX "EmployeeId" ON "Form"("EmployeeId");
+CREATE INDEX "FormDate" ON "Form"("FormDate");
 CREATE INDEX "RequiredDate" ON "Form"("RequiredDate");
 CREATE INDEX "PromisedDate" ON "Form"("PromisedDate");
 
