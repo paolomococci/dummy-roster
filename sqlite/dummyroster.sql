@@ -122,6 +122,7 @@ CREATE TABLE "Product" (
   "SupplierId" BIGINT NULL,
   "QuantityPerUnit" varchar(24) NULL,
   "UnitPrice" REAL NULL CONSTRAINT "DF_Product_UnitPrice" DEFAULT (0),
+  "UnitsInStock" SMALLINT NULL CONSTRAINT "DF_Product_UnitsInStock" DEFAULT (0),
   CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id"),
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id")
