@@ -110,7 +110,7 @@ CREATE TABLE "Category" (
   "Picture" BLOB NULL,
   CONSTRAINT "PK_Category" PRIMARY KEY ("Id")
 );
-CREATE INDEX "CategoryName" ON "Category"("Name");
+CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
