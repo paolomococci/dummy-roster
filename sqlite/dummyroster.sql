@@ -8,3 +8,6 @@ DROP TABLE IF EXISTS "Employee";
 DROP TABLE IF EXISTS "Form";
 DROP TABLE IF EXISTS "Invoice";
 DROP TABLE IF EXISTS "Carrier";
+
+-- Category table
+CREATE TABLE "Category" ();
