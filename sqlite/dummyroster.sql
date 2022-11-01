@@ -19,7 +19,8 @@ CREATE TABLE "Customer" (
   "Picture" BLOB NULL,
   "Contact" varchar(32) NULL,
   "Role" varchar(32) NULL,
-  "Address" varchar(64) NULL
+  "Address" varchar(64) NULL,
+  "City" varchar(16) NULL
 );
 
 -- Category table
