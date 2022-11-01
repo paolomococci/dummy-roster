@@ -181,4 +181,4 @@ CREATE TABLE "Invoice" (
   CONSTRAINT "CK_PriceCut" CHECK (PriceCut >= 0 and PriceCut < 0.3)
 
 );
-CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
+CREATE INDEX "IDX_FormId" ON "Invoice"("FormId");
