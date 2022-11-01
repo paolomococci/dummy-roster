@@ -129,7 +129,7 @@ CREATE TABLE "Product" (
   CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id"),
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id"),
-  CONSTRAINT "CK_Product_UnitPrice" CHECK (UnitPrice => 0)
+  CONSTRAINT "CK_Product_UnitPrice" CHECK (UnitPrice >= 0)
 );
 CREATE INDEX "ProductName" ON "Product"("Name");
 
