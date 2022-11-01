@@ -16,3 +16,6 @@ CREATE TABLE "Customer" ();
 
 -- Category table
 CREATE TABLE "Category" ();
+
+-- Product table
+CREATE TABLE "Product" ();
