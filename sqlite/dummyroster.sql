@@ -17,7 +17,8 @@ CREATE TABLE "Customer" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" varchar(32) NULL
+  "Contact" varchar(32) NULL,
+  "Role" varchar(32) NULL
 );
 
 -- Category table
