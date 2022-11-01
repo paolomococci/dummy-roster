@@ -166,7 +166,6 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Id" BIGINT NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "FormId" BIGINT NULL,
@@ -174,6 +173,6 @@ CREATE TABLE "Invoice" (
   "UnitPrice" REAL NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
   "PriceCut" REAL NOT NULL CONSTRAINT "DF_Form_Details_PriceCut" DEFAULT (0),
-  CONSTRAINT "PK_Invoice" PRIMARY KEY ("Id")
+  CONSTRAINT "PK_Form_Details" PRIMARY KEY ("FormId", "ProductId")
 );
 CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
