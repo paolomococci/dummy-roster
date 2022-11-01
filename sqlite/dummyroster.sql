@@ -171,6 +171,7 @@ CREATE TABLE "Invoice" (
   "Picture" BLOB NULL,
   "FormId" BIGINT NULL,
   "ProductId" BIGINT NULL,
+  "UnitPrice" REAL NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   CONSTRAINT "PK_Invoice" PRIMARY KEY ("Id")
 );
 CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
