@@ -22,3 +22,6 @@ CREATE TABLE "Product" ();
 
 -- Supplier table
 CREATE TABLE "Supplier" ();
+
+-- Employee table
+CREATE TABLE "Employee" ();
