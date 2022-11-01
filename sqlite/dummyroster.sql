@@ -98,6 +98,9 @@ CREATE TABLE "Carrier" (
   CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id")
 );
 CREATE INDEX "CarrierName" ON "Carrier"("Name");
+CREATE INDEX "CarrierCity" ON "Carrier"("City");
+CREATE INDEX "CarrierDistrict" ON "Carrier"("District");
+CREATE INDEX "CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
