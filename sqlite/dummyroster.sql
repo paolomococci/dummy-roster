@@ -25,3 +25,6 @@ CREATE TABLE "Supplier" ();
 
 -- Employee table
 CREATE TABLE "Employee" ();
+
+-- Form table
+CREATE TABLE "Form" ();
