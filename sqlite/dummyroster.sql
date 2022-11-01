@@ -14,15 +14,16 @@ DROP TABLE IF EXISTS "Carrier";
 -- Customer table
 CREATE TABLE "Customer" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  "Contact" varchar(40) NULL
 );
 
 -- Category table
 CREATE TABLE "Category" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
@@ -30,7 +31,7 @@ CREATE TABLE "Category" (
 -- Product table
 CREATE TABLE "Product" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
@@ -38,7 +39,7 @@ CREATE TABLE "Product" (
 -- Supplier table
 CREATE TABLE "Supplier" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
@@ -46,7 +47,7 @@ CREATE TABLE "Supplier" (
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
@@ -54,14 +55,14 @@ CREATE TABLE "Employee" (
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL
 );
 
 -- Invoice table
 CREATE TABLE "Invoice" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
@@ -69,7 +70,7 @@ CREATE TABLE "Invoice" (
 -- Carrier table
 CREATE TABLE "Carrier" (
   "Id" char(5) NOT NULL,
-  "Name" varchar (40) NOT NULL,
+  "Name" varchar(40) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
 );
