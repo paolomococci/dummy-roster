@@ -110,6 +110,7 @@ CREATE TABLE "Form" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL
 );
+CREATE INDEX "FormName" ON "Form"("Name");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
