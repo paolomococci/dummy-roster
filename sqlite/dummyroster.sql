@@ -25,7 +25,8 @@ CREATE TABLE "Customer" (
   "Postcode" varchar(8) NULL,
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
 );
 
 -- Supplier table
