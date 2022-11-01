@@ -19,3 +19,6 @@ CREATE TABLE "Category" ();
 
 -- Product table
 CREATE TABLE "Product" ();
+
+-- Supplier table
+CREATE TABLE "Supplier" ();
