@@ -22,7 +22,8 @@ CREATE TABLE "Customer" (
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
-  "Postcode" varchar(8) NULL
+  "Postcode" varchar(8) NULL,
+  "Country" varchar(16) NULL
 );
 
 -- Supplier table
