@@ -41,7 +41,8 @@ CREATE TABLE "Supplier" (
   "Id" char(8) NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  "Contact" varchar(32) NULL
 );
 
 -- Employee table
@@ -72,5 +73,6 @@ CREATE TABLE "Carrier" (
   "Id" char(8) NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL
+  "Picture" BLOB NULL,
+  "Contact" varchar(32) NULL
 );
