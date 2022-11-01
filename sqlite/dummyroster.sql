@@ -147,6 +147,7 @@ CREATE TABLE "Form" (
   "CustomerId" BIGINT NULL,
   "CarrierId" BIGINT NULL,
   "EmployeeId" BIGINT NULL,
+  "FormDate" DATETIME NULL,
   "RequiredDate" DATETIME NULL,
   "PromisedDate" DATETIME NULL,
   "ShippingCost" REAL NULL CONSTRAINT "DF_Form_ShippingCost" DEFAULT (0),
