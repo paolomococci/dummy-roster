@@ -23,22 +23,6 @@ CREATE TABLE "Customer" (
   "City" varchar(16) NULL
 );
 
--- Category table
-CREATE TABLE "Category" (
-  "Id" char(8) NOT NULL,
-  "Name" varchar(32) NOT NULL,
-  "Description" TEXT NULL,
-  "Picture" BLOB NULL
-);
-
--- Product table
-CREATE TABLE "Product" (
-  "Id" char(8) NOT NULL,
-  "Name" varchar(32) NOT NULL,
-  "Description" TEXT NULL,
-  "Picture" BLOB NULL
-);
-
 -- Supplier table
 CREATE TABLE "Supplier" (
   "Id" char(8) NOT NULL,
@@ -62,6 +46,34 @@ CREATE TABLE "Employee" (
   "City" varchar(16) NULL
 );
 
+-- Carrier table
+CREATE TABLE "Carrier" (
+  "Id" char(8) NOT NULL,
+  "Name" varchar(32) NOT NULL,
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL,
+  "Contact" varchar(32) NULL,
+  "Role" varchar(32) NULL,
+  "Address" varchar(64) NULL,
+  "City" varchar(16) NULL
+);
+
+-- Category table
+CREATE TABLE "Category" (
+  "Id" char(8) NOT NULL,
+  "Name" varchar(32) NOT NULL,
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
+);
+
+-- Product table
+CREATE TABLE "Product" (
+  "Id" char(8) NOT NULL,
+  "Name" varchar(32) NOT NULL,
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
+);
+
 -- Form table
 CREATE TABLE "Form" (
   "Id" char(8) NOT NULL,
@@ -75,16 +87,4 @@ CREATE TABLE "Invoice" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
-);
-
--- Carrier table
-CREATE TABLE "Carrier" (
-  "Id" char(8) NOT NULL,
-  "Name" varchar(32) NOT NULL,
-  "Description" TEXT NULL,
-  "Picture" BLOB NULL,
-  "Contact" varchar(32) NULL,
-  "Role" varchar(32) NULL,
-  "Address" varchar(64) NULL,
-  "City" varchar(16) NULL
 );
