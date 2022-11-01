@@ -160,6 +160,7 @@ CREATE INDEX "CustomerId" ON "Form"("CustomerId");
 CREATE INDEX "CarrierId" ON "Form"("CarrierId");
 CREATE INDEX "EmployeeId" ON "Form"("EmployeeId");
 CREATE INDEX "RequiredDate" ON "Form"("RequiredDate");
+CREATE INDEX "PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
