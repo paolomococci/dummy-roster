@@ -23,28 +23,32 @@ CREATE TABLE "Customer" (
 CREATE TABLE "Category" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
 
 -- Product table
 CREATE TABLE "Product" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
 
 -- Supplier table
 CREATE TABLE "Supplier" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
 
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
 
 -- Form table
@@ -58,12 +62,14 @@ CREATE TABLE "Form" (
 CREATE TABLE "Invoice" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
 
 -- Carrier table
 CREATE TABLE "Carrier" (
   "Id" char(5) NOT NULL,
   "Name" varchar (40) NOT NULL,
-  "Description" TEXT NULL
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL
 );
