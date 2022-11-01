@@ -74,10 +74,10 @@ CREATE TABLE "Employee" (
   "Fax" varchar(24) NULL,
   CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
 );
-CREATE INDEX "EmployeeName" ON "Employee"("Name");
-CREATE INDEX "EmployeeCity" ON "Employee"("City");
-CREATE INDEX "EmployeeDistrict" ON "Employee"("District");
-CREATE INDEX "EmployeePostcode" ON "Employee"("Postcode");
+CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
+CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
+CREATE INDEX "IDX_EmployeeDistrict" ON "Employee"("District");
+CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
