@@ -33,7 +33,8 @@ CREATE TABLE "Supplier" (
   "Contact" varchar(32) NULL,
   "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
-  "City" varchar(16) NULL
+  "City" varchar(16) NULL,
+  "District" varchar(16) NULL
 );
 
 -- Employee table
@@ -44,7 +45,8 @@ CREATE TABLE "Employee" (
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
-  "City" varchar(16) NULL
+  "City" varchar(16) NULL,
+  "District" varchar(16) NULL
 );
 
 -- Carrier table
@@ -56,7 +58,8 @@ CREATE TABLE "Carrier" (
   "Contact" varchar(32) NULL,
   "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
-  "City" varchar(16) NULL
+  "City" varchar(16) NULL,
+  "District" varchar(16) NULL
 );
 
 -- Category table
