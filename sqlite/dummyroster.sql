@@ -87,7 +87,7 @@ CREATE TABLE "Carrier" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" varchar(32) NULL,
+  "Contact" BIGINT NULL,
   "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
@@ -97,7 +97,8 @@ CREATE TABLE "Carrier" (
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id")
+  CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id"),
+  CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
 CREATE INDEX "IDX_CarrierCity" ON "Carrier"("City");
