@@ -63,7 +63,6 @@ CREATE TABLE "Supplier" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" BIGINT NULL,
-  "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
