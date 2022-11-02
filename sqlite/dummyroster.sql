@@ -2,9 +2,9 @@
 
 -- drop tables if exists
 
+DROP TABLE IF EXISTS "Employee";
 DROP TABLE IF EXISTS "Customer";
 DROP TABLE IF EXISTS "Supplier";
-DROP TABLE IF EXISTS "Employee";
 DROP TABLE IF EXISTS "Carrier";
 DROP TABLE IF EXISTS "Category";
 DROP TABLE IF EXISTS "Product";
