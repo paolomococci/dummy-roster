@@ -11,6 +11,28 @@ DROP TABLE IF EXISTS "Product";
 DROP TABLE IF EXISTS "Form";
 DROP TABLE IF EXISTS "Invoice";
 
+-- Employee table
+CREATE TABLE "Employee" (
+  "Id" BIGINT NOT NULL,
+  "Name" varchar(32) NOT NULL,
+  "Description" TEXT NULL,
+  "Picture" BLOB NULL,
+  "Role" varchar(32) NULL,
+  "Address" varchar(64) NULL,
+  "City" varchar(16) NULL,
+  "District" varchar(16) NULL,
+  "Postcode" varchar(8) NULL,
+  "Country" varchar(16) NULL,
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
+);
+CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
+CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
+CREATE INDEX "IDX_EmployeeDistrict" ON "Employee"("District");
+CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
+
 -- Customer table
 CREATE TABLE "Customer" (
   "Id" BIGINT NOT NULL,
@@ -56,28 +78,6 @@ CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
 CREATE INDEX "IDX_SupplierCity" ON "Supplier"("City");
 CREATE INDEX "IDX_SupplierDistrict" ON "Supplier"("District");
 CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
-
--- Employee table
-CREATE TABLE "Employee" (
-  "Id" BIGINT NOT NULL,
-  "Name" varchar(32) NOT NULL,
-  "Description" TEXT NULL,
-  "Picture" BLOB NULL,
-  "Role" varchar(32) NULL,
-  "Address" varchar(64) NULL,
-  "City" varchar(16) NULL,
-  "District" varchar(16) NULL,
-  "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
-);
-CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
-CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
-CREATE INDEX "IDX_EmployeeDistrict" ON "Employee"("District");
-CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
