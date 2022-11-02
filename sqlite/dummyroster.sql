@@ -39,7 +39,7 @@ CREATE TABLE "Customer" (
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" varchar(32) NULL,
+  "Contact" BIGINT NULL,
   "Role" varchar(32) NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
@@ -49,7 +49,8 @@ CREATE TABLE "Customer" (
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Customer" PRIMARY KEY ("Id")
+  CONSTRAINT "PK_Customer" PRIMARY KEY ("Id"),
+  CONSTRAINT "FK_Customer_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
 CREATE INDEX "IDX_CustomerCity" ON "Customer"("City");
