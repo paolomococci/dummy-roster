@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS "Invoice";
 CREATE TABLE "Employee" (
   "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
+  "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
