@@ -38,6 +38,7 @@ CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 CREATE TABLE "Customer" (
   "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
+  "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" BIGINT NULL,
@@ -61,6 +62,7 @@ CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 CREATE TABLE "Supplier" (
   "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
+  "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" BIGINT NULL,
@@ -84,6 +86,7 @@ CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 CREATE TABLE "Carrier" (
   "Id" BIGINT NOT NULL,
   "Name" varchar(32) NOT NULL,
+  "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" BIGINT NULL,
