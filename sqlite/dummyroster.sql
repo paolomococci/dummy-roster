@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS "Invoice";
 
 -- Employee table
 CREATE TABLE "Employee" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -36,12 +36,12 @@ CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Customer table
 CREATE TABLE "Customer" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" BIGINT NULL,
+  "Contact" INT NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
@@ -60,12 +60,12 @@ CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" BIGINT NULL,
+  "Contact" INT NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
@@ -84,12 +84,12 @@ CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "Contact" BIGINT NULL,
+  "Contact" INT NULL,
   "Address" varchar(64) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
@@ -108,7 +108,7 @@ CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -118,12 +118,12 @@ CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
-  "CategoryId" BIGINT NULL,
-  "SupplierId" BIGINT NULL,
+  "CategoryId" INT NULL,
+  "SupplierId" INT NULL,
   "QuantityPerUnit" varchar(24) NULL,
   "UnitPrice" NUMERIC NULL CONSTRAINT "DF_Product_UnitPrice" DEFAULT (0),
   "UnitsInStock" SMALLINT NULL CONSTRAINT "DF_Product_UnitsInStock" DEFAULT (0),
@@ -146,11 +146,11 @@ CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Description" TEXT NULL,
-  "CustomerId" BIGINT NULL,
-  "CarrierId" BIGINT NULL,
-  "EmployeeId" BIGINT NULL,
+  "CustomerId" INT NULL,
+  "CarrierId" INT NULL,
+  "EmployeeId" INT NULL,
   "FormDate" DATETIME NULL,
   "RequiredDate" DATETIME NULL,
   "PromisedDate" DATETIME NULL,
@@ -170,10 +170,10 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Id" BIGINT NOT NULL,
+  "Id" INT NOT NULL,
   "Note" TEXT NULL,
-  "FormId" BIGINT NULL,
-  "ProductId" BIGINT NULL,
+  "FormId" INT NULL,
+  "ProductId" INT NULL,
   "UnitPrice" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
   "PriceCut" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_PriceCut" DEFAULT (0),
