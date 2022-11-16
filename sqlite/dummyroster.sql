@@ -170,6 +170,7 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
+  "Id" BIGINT NOT NULL,
   "Note" TEXT NULL,
   "FormId" BIGINT NULL,
   "ProductId" BIGINT NULL,
