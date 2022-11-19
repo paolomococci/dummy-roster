@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS "Invoice";
 
 -- Employee table
 CREATE TABLE "Employee" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -36,7 +36,7 @@ CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Customer table
 CREATE TABLE "Customer" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -60,7 +60,7 @@ CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -84,7 +84,7 @@ CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -108,7 +108,7 @@ CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -118,7 +118,7 @@ CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -146,7 +146,7 @@ CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Description" TEXT NULL,
   "CustomerId" INT NULL,
   "CarrierId" INT NULL,
@@ -170,7 +170,7 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Id" INT NOT NULL,
+  "Id" INT AUTOINCREMENT,
   "Note" TEXT NULL,
   "FormId" INT NULL,
   "ProductId" INT NULL,
