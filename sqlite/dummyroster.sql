@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS "Invoice";
 
 -- Employee table
 CREATE TABLE "Employee" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -26,8 +26,7 @@ CREATE TABLE "Employee" (
   "Country" varchar(16) NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Employee" PRIMARY KEY ("Id")
+  "Fax" varchar(24) NULL
 );
 CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
 CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
@@ -36,7 +35,7 @@ CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Customer table
 CREATE TABLE "Customer" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -50,7 +49,6 @@ CREATE TABLE "Customer" (
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Customer" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Customer_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
@@ -60,7 +58,7 @@ CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -74,7 +72,6 @@ CREATE TABLE "Supplier" (
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Supplier" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Supplier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
@@ -84,7 +81,7 @@ CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -98,7 +95,6 @@ CREATE TABLE "Carrier" (
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "PK_Carrier" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
 );
 CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
@@ -108,17 +104,16 @@ CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Category table
 CREATE TABLE "Category" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Picture" BLOB NULL,
-  CONSTRAINT "PK_Category" PRIMARY KEY ("Id")
+  "Picture" BLOB NULL
 );
 CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -130,7 +125,6 @@ CREATE TABLE "Product" (
   "UnitsOnOrder" SMALLINT NULL CONSTRAINT "DF_Product_UnitsOnOrder" DEFAULT (0),
   "ReorderLevel" SMALLINT NULL CONSTRAINT "DF_Product_ReorderLevel" DEFAULT (0),
   "Discontinued" BOOLEAN NOT NULL CONSTRAINT "DF_Product_Discontinued" DEFAULT (0),
-  CONSTRAINT "PK_Product" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Product_Category" FOREIGN KEY ("CategoryId") REFERENCES "Category" ("Id"),
   CONSTRAINT "FK_Product_Supplier" FOREIGN KEY ("SupplierId") REFERENCES "Supplier" ("Id"),
   CONSTRAINT "CK_Product_UnitPrice" CHECK (UnitPrice >= 0),
@@ -146,7 +140,7 @@ CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
-  "Id" INT AUTOINCREMENT,
+  "Id" INTEGER PRIMARY KEY,
   "Description" TEXT NULL,
   "CustomerId" INT NULL,
   "CarrierId" INT NULL,
@@ -155,7 +149,6 @@ CREATE TABLE "Form" (
   "RequiredDate" DATETIME NULL,
   "PromisedDate" DATETIME NULL,
   "ShippingCost" NUMERIC NULL CONSTRAINT "DF_Form_ShippingCost" DEFAULT (0),
-  CONSTRAINT "PK_Form" PRIMARY KEY ("Id"),
   CONSTRAINT "FK_Form_Customer" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id"),
   CONSTRAINT "FK_Form_Carrier" FOREIGN KEY ("CarrierId") REFERENCES "Carrier" ("Id"),
   CONSTRAINT "FK_Form_Employee" FOREIGN KEY ("EmployeeId") REFERENCES "Employee" ("Id")
@@ -170,7 +163,6 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Id" INT AUTOINCREMENT,
   "Note" TEXT NULL,
   "FormId" INT NULL,
   "ProductId" INT NULL,
@@ -185,5 +177,4 @@ CREATE TABLE "Invoice" (
   CONSTRAINT "CK_PriceCut" CHECK (PriceCut >= 0 and PriceCut < 0.3)
 
 );
-CREATE INDEX "IDX_FormId" ON "Invoice"("FormId");
 CREATE INDEX "IDX_ProductId" ON "Invoice"("ProductId");
