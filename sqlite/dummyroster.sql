@@ -108,7 +108,7 @@ CREATE TABLE "Address" (
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL,
+  "Country" varchar(16) NULL
 );
 CREATE INDEX "IDX_AddressCity" ON "Address"("City");
 CREATE INDEX "IDX_AddressDistrict" ON "Address"("District");
