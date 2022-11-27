@@ -65,7 +65,7 @@ CREATE TABLE "Supplier" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" INT NULL,
-  "Location" varchar(64) NULL,
+  "Location" INT NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
