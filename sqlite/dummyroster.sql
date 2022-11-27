@@ -75,9 +75,6 @@ CREATE TABLE "Carrier" (
   CONSTRAINT "FK_Carrier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
-CREATE INDEX "IDX_CarrierCity" ON "Carrier"("City");
-CREATE INDEX "IDX_CarrierDistrict" ON "Carrier"("District");
-CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Address table
 CREATE TABLE "Address" (
