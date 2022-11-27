@@ -58,9 +58,6 @@ CREATE TABLE "Supplier" (
   CONSTRAINT "FK_Supplier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
-CREATE INDEX "IDX_SupplierCity" ON "Supplier"("City");
-CREATE INDEX "IDX_SupplierDistrict" ON "Supplier"("District");
-CREATE INDEX "IDX_SupplierPostcode" ON "Supplier"("Postcode");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
