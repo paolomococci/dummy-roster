@@ -114,6 +114,9 @@ CREATE TABLE "Address" (
   "Country" varchar(16) NULL,
 );
 CREATE INDEX "IDX_AddressCity" ON "Address"("City");
+CREATE INDEX "IDX_AddressDistrict" ON "Address"("District");
+CREATE INDEX "IDX_AddressPostcode" ON "Address"("Postcode");
+CREATE INDEX "IDX_AddressCountry" ON "Address"("Country");
 
 -- Category table
 CREATE TABLE "Category" (
