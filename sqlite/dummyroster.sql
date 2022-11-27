@@ -88,15 +88,12 @@ CREATE TABLE "Carrier" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Contact" INT NULL,
-  "Address" varchar(64) NULL,
-  "City" varchar(16) NULL,
-  "District" varchar(16) NULL,
-  "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL,
+  "Location" INT NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL,
-  CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id")
+  CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
+  CONSTRAINT "FK_Carrier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
 CREATE INDEX "IDX_CarrierCity" ON "Carrier"("City");
