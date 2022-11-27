@@ -105,8 +105,15 @@ CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
 -- Address table
 CREATE TABLE "Address" (
-  "Id" INTEGER PRIMARY KEY
+  "Id" INTEGER PRIMARY KEY,
+  "StreetOrSquare" varchar(32) NULL,
+  "Civic" varchar(16) NULL,
+  "City" varchar(16) NULL,
+  "District" varchar(16) NULL,
+  "Postcode" varchar(8) NULL,
+  "Country" varchar(16) NULL,
 );
+CREATE INDEX "IDX_AddressCity" ON "Address"("City");
 
 -- Category table
 CREATE TABLE "Category" (
