@@ -21,9 +21,6 @@ CREATE TABLE "Employee" (
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
   "Location" INT NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
   CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
@@ -40,9 +37,6 @@ CREATE TABLE "Customer" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
   CONSTRAINT "FK_Customer_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
   CONSTRAINT "FK_Customer_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
@@ -60,9 +54,6 @@ CREATE TABLE "Supplier" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
   CONSTRAINT "FK_Supplier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
   CONSTRAINT "FK_Supplier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
@@ -80,9 +71,6 @@ CREATE TABLE "Carrier" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL,
   CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
   CONSTRAINT "FK_Carrier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
@@ -99,7 +87,10 @@ CREATE TABLE "Address" (
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL
+  "Country" varchar(16) NULL,
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
 );
 CREATE INDEX "IDX_AddressCity" ON "Address"("City");
 CREATE INDEX "IDX_AddressDistrict" ON "Address"("District");
