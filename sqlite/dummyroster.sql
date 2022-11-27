@@ -24,9 +24,6 @@ CREATE TABLE "Employee" (
   CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
-CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
-CREATE INDEX "IDX_EmployeeDistrict" ON "Employee"("District");
-CREATE INDEX "IDX_EmployeePostcode" ON "Employee"("Postcode");
 
 -- Customer table
 CREATE TABLE "Customer" (
