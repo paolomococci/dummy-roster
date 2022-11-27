@@ -20,14 +20,11 @@ CREATE TABLE "Employee" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
-  "Address" varchar(64) NULL,
-  "City" varchar(16) NULL,
-  "District" varchar(16) NULL,
-  "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL,
+  "Location" INT NULL,
   "Email" varchar(48) NULL,
   "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Fax" varchar(24) NULL,
+  CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
 CREATE INDEX "IDX_EmployeeCity" ON "Employee"("City");
