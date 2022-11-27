@@ -41,9 +41,6 @@ CREATE TABLE "Customer" (
   CONSTRAINT "FK_Customer_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
 );
 CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
-CREATE INDEX "IDX_CustomerCity" ON "Customer"("City");
-CREATE INDEX "IDX_CustomerDistrict" ON "Customer"("District");
-CREATE INDEX "IDX_CustomerPostcode" ON "Customer"("Postcode");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
