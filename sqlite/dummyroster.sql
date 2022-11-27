@@ -103,6 +103,11 @@ CREATE INDEX "IDX_CarrierCity" ON "Carrier"("City");
 CREATE INDEX "IDX_CarrierDistrict" ON "Carrier"("District");
 CREATE INDEX "IDX_CarrierPostcode" ON "Carrier"("Postcode");
 
+-- Address table
+CREATE TABLE "Address" (
+  "Id" INTEGER PRIMARY KEY
+);
+
 -- Category table
 CREATE TABLE "Category" (
   "Id" INTEGER PRIMARY KEY,
