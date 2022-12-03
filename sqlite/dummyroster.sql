@@ -146,9 +146,10 @@ CREATE INDEX "IDX_PromisedDate" ON "Form"("PromisedDate");
 
 -- Invoice table
 CREATE TABLE "Invoice" (
-  "Note" TEXT NULL,
+  "Id" INTEGER PRIMARY KEY,
   "FormId" INT NULL,
   "ProductId" INT NULL,
+  "Note" TEXT NULL,
   "UnitPrice" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
   "PriceCut" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_PriceCut" DEFAULT (0),
@@ -160,4 +161,5 @@ CREATE TABLE "Invoice" (
   CONSTRAINT "CK_PriceCut" CHECK (PriceCut >= 0 and PriceCut < 0.3)
 
 );
+CREATE INDEX "IDX_InvoiceId" ON "Invoice"("Id");
 CREATE INDEX "IDX_ProductId" ON "Invoice"("ProductId");
