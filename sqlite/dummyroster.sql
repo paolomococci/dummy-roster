@@ -80,6 +80,7 @@ CREATE TABLE "Address" (
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL
 );
+CREATE INDEX "IDX_AddressName" ON "Address"("Name");
 CREATE INDEX "IDX_AddressCity" ON "Address"("City");
 CREATE INDEX "IDX_AddressDistrict" ON "Address"("District");
 CREATE INDEX "IDX_AddressPostcode" ON "Address"("Postcode");
