@@ -70,7 +70,7 @@ CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
 -- Address table
 CREATE TABLE "Address" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
-  "StreetOrSquare" varchar(32) NULL,
+  "Name" varchar(32) NULL,
   "Civic" varchar(16) NULL,
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
