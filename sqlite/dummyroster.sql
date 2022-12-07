@@ -87,6 +87,9 @@ CREATE INDEX "IDX_AddressDistrict" ON "Address"("District");
 CREATE INDEX "IDX_AddressPostcode" ON "Address"("Postcode");
 CREATE INDEX "IDX_AddressCountry" ON "Address"("Country");
 
+-- Credential table
+CREATE TABLE "Credential" ();
+
 -- Category table
 CREATE TABLE "Category" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
