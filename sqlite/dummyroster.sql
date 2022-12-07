@@ -76,10 +76,7 @@ CREATE TABLE "Address" (
   "City" varchar(16) NULL,
   "District" varchar(16) NULL,
   "Postcode" varchar(8) NULL,
-  "Country" varchar(16) NULL,
-  "Email" varchar(48) NULL,
-  "Phone" varchar(24) NULL,
-  "Fax" varchar(24) NULL
+  "Country" varchar(16) NULL
 );
 CREATE INDEX "IDX_AddressName" ON "Address"("Name");
 CREATE INDEX "IDX_AddressCity" ON "Address"("City");
@@ -88,7 +85,12 @@ CREATE INDEX "IDX_AddressPostcode" ON "Address"("Postcode");
 CREATE INDEX "IDX_AddressCountry" ON "Address"("Country");
 
 -- Credential table
-CREATE TABLE "Credential" ();
+CREATE TABLE "Credential" (
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "Email" varchar(48) NULL,
+  "Phone" varchar(24) NULL,
+  "Fax" varchar(24) NULL
+);
 
 -- Category table
 CREATE TABLE "Category" (
