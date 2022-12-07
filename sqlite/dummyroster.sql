@@ -22,7 +22,9 @@ CREATE TABLE "Employee" (
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
   "Location" INT NULL,
-  CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
+  "Ref" INT NULL,
+  CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id"),
+  CONSTRAINT "FK_Employee_Credential" FOREIGN KEY ("Ref") REFERENCES "Credential" ("Id")
 );
 CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
 
@@ -35,8 +37,10 @@ CREATE TABLE "Customer" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
+  "Ref" INT NULL,
   CONSTRAINT "FK_Customer_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
-  CONSTRAINT "FK_Customer_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
+  CONSTRAINT "FK_Customer_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id"),
+  CONSTRAINT "FK_Customer_Credential" FOREIGN KEY ("Ref") REFERENCES "Credential" ("Id")
 );
 CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
 
@@ -49,8 +53,10 @@ CREATE TABLE "Supplier" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
+  "Ref" INT NULL,
   CONSTRAINT "FK_Supplier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
-  CONSTRAINT "FK_Supplier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
+  CONSTRAINT "FK_Supplier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id"),
+  CONSTRAINT "FK_Supplier_Credential" FOREIGN KEY ("Ref") REFERENCES "Credential" ("Id")
 );
 CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
 
@@ -63,8 +69,10 @@ CREATE TABLE "Carrier" (
   "Picture" BLOB NULL,
   "Contact" INT NULL,
   "Location" INT NULL,
+  "Ref" INT NULL,
   CONSTRAINT "FK_Carrier_Employee" FOREIGN KEY ("Contact") REFERENCES "Employee" ("Id"),
-  CONSTRAINT "FK_Carrier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id")
+  CONSTRAINT "FK_Carrier_Address" FOREIGN KEY ("Location") REFERENCES "Address" ("Id"),
+  CONSTRAINT "FK_Carrier_Credential" FOREIGN KEY ("Ref") REFERENCES "Credential" ("Id")
 );
 CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
 
