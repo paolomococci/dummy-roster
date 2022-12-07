@@ -91,6 +91,7 @@ CREATE TABLE "Credential" (
   "Phone" varchar(24) NULL,
   "Fax" varchar(24) NULL
 );
+CREATE INDEX "IDX_CredentialEmail" ON "Credential"("Email");
 
 -- Category table
 CREATE TABLE "Category" (
