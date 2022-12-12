@@ -21,6 +21,7 @@ CREATE TABLE "Employee" (
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
   "Role" varchar(32) NULL,
+  "Belonging" varchar(8) NULL,
   "Loc" INT NULL,
   "Ref" INT NULL,
   CONSTRAINT "FK_Employee_Address" FOREIGN KEY ("Loc") REFERENCES "Address" ("Id"),
