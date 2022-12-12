@@ -53,6 +53,7 @@ CREATE TABLE "Supplier" (
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
+  "Belonging" varchar(8) NULL,
   "Contact" INT NULL,
   "Loc" INT NULL,
   "Ref" INT NULL,
