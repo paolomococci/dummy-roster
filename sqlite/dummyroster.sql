@@ -169,6 +169,7 @@ CREATE TABLE "Invoice" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "FormId" INT NULL,
   "ProductId" INT NULL,
+  "IssuingDate" DATETIME NULL,
   "Note" TEXT NULL,
   "UnitPrice" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
