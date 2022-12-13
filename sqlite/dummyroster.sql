@@ -110,6 +110,7 @@ CREATE TABLE "Category" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
+  "Belonging" varchar(8) NULL,
   "Picture" BLOB NULL
 );
 CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
@@ -119,6 +120,7 @@ CREATE TABLE "Product" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
+  "Belonging" varchar(8) NULL,
   "Picture" BLOB NULL,
   "CategoryId" INT NULL,
   "SupplierId" INT NULL,
