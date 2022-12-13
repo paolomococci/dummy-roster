@@ -16,7 +16,11 @@ DROP TABLE IF EXISTS "Invoice";
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
-  "Name" varchar(32) NOT NULL,
+  "FirstName" varchar(16) NOT NULL,
+  "SecondName" varchar(16) NULL,
+  "LastName" varchar(16) NOT NULL,
+  "Nickname" varchar(16) NULL,
+  "Username" varchar(32) NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
