@@ -7,6 +7,7 @@ This means:
 * dockerized MariaDB;
 * the environment Homestead of Laravel.
 I opted for the second option considered, MariaDB version 5.5.68.
+Therefore, I started by installing PHP version 8.0.27 from source.
 
 ## scaffolding
 
