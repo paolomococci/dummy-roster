@@ -24,7 +24,6 @@ sudo scripts/mysql_install_db --user=mysql
 sudo chown -R root .
 sudo chown -R mysql data
 sudo /usr/local/mysql/bin/mysqld_safe --user=mysql &
-
 mysql -u root -p
 
 mysqladmin -u root -p shutdown
