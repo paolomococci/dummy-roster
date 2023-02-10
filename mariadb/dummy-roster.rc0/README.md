@@ -8,7 +8,7 @@ This means:
 * the environment Homestead of Laravel.
 I opted for the first option considered, MariaDB version 10.3.
 Therefore, I started by installing PHP version 8.0.27 from source.
-I downloaded Composer in 2.5.2 version from official site.
+I downloaded Composer in 2.5.3 version from official site.
 Finally, I typed the following shell commands:
 
 ```shell
