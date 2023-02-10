@@ -9,6 +9,7 @@ This means:
 I opted for the second option considered, MariaDB version 5.5.68.
 Therefore, I started by installing PHP version 8.0.27 from source.
 I downloaded Composer in 2.5.2 version from official site.
+Finally, after unpacking the archive containing MariaDB, I installed it with the following shell commands:
 
 ## scaffolding
 
