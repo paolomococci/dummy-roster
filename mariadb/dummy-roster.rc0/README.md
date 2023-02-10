@@ -14,7 +14,6 @@ Finally, I typed the following shell commands:
 ```shell
 mysql -u root -p
 
-mysqladmin -u root -p shutdown
 ```
 
 ## scaffolding
