@@ -17,3 +17,5 @@ yarn-error.log
 /.idea
 /.vscode
 HELP.md
+composer.json
+composer.lock
