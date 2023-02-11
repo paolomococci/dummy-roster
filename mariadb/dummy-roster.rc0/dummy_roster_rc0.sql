@@ -235,9 +235,11 @@ CREATE TABLE `Invoice` (
   `ProductId` int(11) DEFAULT NULL,
   `IssuingDate` datetime DEFAULT NULL,
   `Note` text DEFAULT NULL,
-  `UnitPrice` NUMERIC NOT NULL DEFAULT (0),
+  `UnitPrice` NUMERIC NOT NULL DEFAULT (0) CHECK (`UnitPrice` >= 0),
   `Quantity` SMALLINT NOT NULL  DEFAULT (1),
   `PriceCut` NUMERIC NOT NULL DEFAULT (0),
+  CONSTRAINT `FK_Form_Details` FOREIGN KEY (`FormId`) REFERENCES `Form` (`Id`),
+  CONSTRAINT `FK_Product_Details` FOREIGN KEY (`ProductId`) REFERENCES `Product` (`Id`),
   PRIMARY KEY (`Id`),
   KEY `IDX_InvoiceId` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
