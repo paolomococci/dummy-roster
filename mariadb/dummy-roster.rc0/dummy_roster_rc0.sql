@@ -127,6 +127,12 @@ CREATE TABLE `Customer` (
   `Description` text DEFAULT NULL,
   `Picture` blob DEFAULT NULL,
   `Belonging` varchar(8) DEFAULT NULL,
+  `Contact` INT NULL,
+  `Loc` INT NULL,
+  `Ref` INT NULL,
+  CONSTRAINT `FK_Customer_Employee` FOREIGN KEY (`Contact`) REFERENCES `Employee` (`Id`),
+  CONSTRAINT `FK_Customer_Address` FOREIGN KEY (`Loc`) REFERENCES `Address` (`Id`),
+  CONSTRAINT `FK_Customer_Credential` FOREIGN KEY (`Ref`) REFERENCES `Credential` (`Id`),
   PRIMARY KEY (`Id`),
   KEY `IDX_CustomerName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
