@@ -238,8 +238,8 @@ CREATE TABLE `Invoice` (
   `UnitPrice` NUMERIC NOT NULL DEFAULT (0) CHECK (`UnitPrice` >= 0),
   `Quantity` SMALLINT NOT NULL  DEFAULT (1) CHECK (`Quantity` > 0),
   `PriceCut` NUMERIC NOT NULL DEFAULT (0) CHECK (`PriceCut` >= 0 and `PriceCut` < 0.3),
-  CONSTRAINT `FK_Form_Details` FOREIGN KEY (`FormId`) REFERENCES `Form` (`Id`),
-  CONSTRAINT `FK_Product_Details` FOREIGN KEY (`ProductId`) REFERENCES `Product` (`Id`),
+  CONSTRAINT `FK_Form_Details` FOREIGN KEY (`FormId`) REFERENCES `Form` (`Id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `FK_Product_Details` FOREIGN KEY (`ProductId`) REFERENCES `Product` (`Id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   PRIMARY KEY (`Id`),
   KEY `IDX_InvoiceId` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
