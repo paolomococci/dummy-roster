@@ -199,7 +199,16 @@ DROP TABLE IF EXISTS `Form`;
 CREATE TABLE `Form` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Description` text DEFAULT NULL,
-  `ShippingCost` NUMERIC NULL DEFAULT (0),
+  `CustomerId` INT NULL,
+  `CarrierId` INT NULL,
+  `EmployeeId` INT NULL,
+  `FormDate` DATETIME NULL,
+  `RequiredDate` DATETIME NULL,
+  `PromisedDate` DATETIME NULL,
+  `ShippingCost` NUMERIC NULL DEFAULT (0) CHECK (`ShippingCost`>=0),
+  CONSTRAINT `FK_Form_Customer` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`Id`),
+  CONSTRAINT `FK_Form_Carrier` FOREIGN KEY (`CarrierId`) REFERENCES `Carrier` (`Id`),
+  CONSTRAINT `FK_Form_Employee` FOREIGN KEY (`EmployeeId`) REFERENCES `Employee` (`Id`),
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
