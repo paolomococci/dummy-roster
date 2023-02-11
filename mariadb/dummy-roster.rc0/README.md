@@ -9,14 +9,30 @@ This means:
 I opted for the first option considered, MariaDB version 10.3.
 Therefore, I started by installing PHP version 8.0.27 from source.
 I downloaded Composer in 2.5.3 version from official site.
-Finally, I typed the following shell commands:
+Finally, to reset root password of RDBMS, I typed the following commands in the system shell:
 
 ```shell
-mysql -u root -p
-
+sudo systemctl stop mariadb
+sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables --skip-networking"
+sudo systemctl start mariadb
+sudo mysql -u root
 ```
 
-## scaffolding
+and in the shell of the RDBMS:
+
+```shell
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'some_password';
+CREATE USER 'some_developer'@'localhost' IDENTIFIED BY 'some_password';
+CREATE DATABASE dummy_roster_rc0;
+SHOW DATABASES;
+USE dummy_roster_rc0;
+GRANT ALL PRIVILEGES ON dummy_roster_rc0.* TO 'some_developer'@'localhost';
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'some_developer'@'localhost';
+exit
+```
+
+## scaffolding of web application
 
 ```shell
 composer create-project laravel/laravel dummy-roster.rc0
