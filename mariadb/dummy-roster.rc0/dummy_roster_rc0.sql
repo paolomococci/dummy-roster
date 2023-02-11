@@ -252,12 +252,16 @@ CREATE TABLE `Product` (
   `Description` text DEFAULT NULL,
   `Belonging` varchar(8) DEFAULT NULL,
   `Picture` blob DEFAULT NULL,
+  `CategoryId` INT NULL,
+  `SupplierId` INT NULL,
   `QuantityPerUnit` varchar(24) DEFAULT NULL,
   `UnitPrice` NUMERIC NULL DEFAULT (0) CHECK (`UnitPrice`>=0),
   `UnitsInStock` SMALLINT NULL DEFAULT (0) CHECK (`UnitsInStock`>=0),
   `UnitsOnOrder` SMALLINT NULL DEFAULT (0) CHECK (`UnitsOnOrder`>=0),
   `ReorderLevel` SMALLINT NULL DEFAULT (0) CHECK (`ReorderLevel`>=0),
   `Discontinued` BOOLEAN NOT NULL DEFAULT (0),
+  CONSTRAINT `FK_Product_Category` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`),
+  CONSTRAINT `FK_Product_Supplier` FOREIGN KEY (`SupplierId`) REFERENCES `Supplier` (`Id`),
   PRIMARY KEY (`Id`),
   KEY `IDX_ProductName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
