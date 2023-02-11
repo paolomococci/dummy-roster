@@ -15,9 +15,11 @@ CREATE TABLE `Product` (
   `ReorderLevel` smallint(6) DEFAULT 0 CHECK (`ReorderLevel` >= 0),
   `Discontinued` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Id`),
-  KEY `FK_Product_Category` (`CategoryId`),
-  KEY `FK_Product_Supplier` (`SupplierId`),
   KEY `IDX_ProductName` (`Name`),
+  KEY `IDX_CategoryId` (`CategoryId`),
+  KEY `IDX_ProductBelongingCategory` (`CategoryId`),
+  KEY `IDX_SupplierId` (`SupplierId`),
+  KEY `IDX_ProductSuppliedBy` (`SupplierId`),
   CONSTRAINT `FK_Product_Category` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE CASCADE,
   CONSTRAINT `FK_Product_Supplier` FOREIGN KEY (`SupplierId`) REFERENCES `Supplier` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
