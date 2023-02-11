@@ -253,7 +253,8 @@ CREATE TABLE `Product` (
   `Belonging` varchar(8) DEFAULT NULL,
   `Picture` blob DEFAULT NULL,
   `QuantityPerUnit` varchar(24) DEFAULT NULL,
-  `UnitPrice` NUMERIC NULL CHECK (`UnitPrice`>0),
+  `UnitPrice` NUMERIC NULL CHECK (`UnitPrice`>=0),
+  `UnitsInStock` SMALLINT NULL CHECK (`UnitsInStock`>=0),
   PRIMARY KEY (`Id`),
   KEY `IDX_ProductName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
