@@ -1,4 +1,9 @@
+-- to disable check
 SET FOREIGN_KEY_CHECKS=0;
+
+-- to re-enable check
+-- SET FOREIGN_KEY_CHECKS=1;
+
 --
 -- Table structure for table `Address`
 --
