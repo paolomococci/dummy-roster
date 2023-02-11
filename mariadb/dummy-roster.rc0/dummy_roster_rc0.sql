@@ -46,6 +46,12 @@ CREATE TABLE `Carrier` (
   `Description` text DEFAULT NULL,
   `Picture` blob DEFAULT NULL,
   `Belonging` varchar(8) DEFAULT NULL,
+  `Contact` INT NULL,
+  `Loc` INT NULL,
+  `Ref` INT NULL,
+  CONSTRAINT `FK_Carrier_Employee` FOREIGN KEY (`Contact`) REFERENCES `Employee` (`Id`),
+  CONSTRAINT `FK_Carrier_Address` FOREIGN KEY (`Loc`) REFERENCES `Address` (`Id`),
+  CONSTRAINT `FK_Carrier_Credential` FOREIGN KEY (`Ref`) REFERENCES `Credential` (`Id`),
   PRIMARY KEY (`Id`),
   KEY `IDX_CarrierName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
