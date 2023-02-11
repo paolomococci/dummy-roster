@@ -236,7 +236,7 @@ CREATE TABLE `Invoice` (
   `IssuingDate` datetime DEFAULT NULL,
   `Note` text DEFAULT NULL,
   `UnitPrice` NUMERIC NOT NULL DEFAULT (0) CHECK (`UnitPrice` >= 0),
-  `Quantity` SMALLINT NOT NULL  DEFAULT (1),
+  `Quantity` SMALLINT NOT NULL  DEFAULT (1) CHECK (`Quantity` > 0),
   `PriceCut` NUMERIC NOT NULL DEFAULT (0),
   CONSTRAINT `FK_Form_Details` FOREIGN KEY (`FormId`) REFERENCES `Form` (`Id`),
   CONSTRAINT `FK_Product_Details` FOREIGN KEY (`ProductId`) REFERENCES `Product` (`Id`),
