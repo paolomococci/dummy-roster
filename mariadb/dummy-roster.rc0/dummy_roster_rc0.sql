@@ -159,6 +159,10 @@ CREATE TABLE `Employee` (
   `Picture` blob DEFAULT NULL,
   `Role` varchar(32) DEFAULT NULL,
   `Belonging` varchar(8) DEFAULT NULL,
+  `Loc` INT NULL,
+  `Ref` INT NULL,
+  CONSTRAINT `FK_Employee_Address` FOREIGN KEY (`Loc`) REFERENCES `Address` (`Id`),
+  CONSTRAINT `FK_Employee_Credential` FOREIGN KEY (`Ref`) REFERENCES `Credential` (`Id`),
   PRIMARY KEY (`Id`),
   KEY `IDX_EmployeeName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
