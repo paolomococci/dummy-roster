@@ -235,6 +235,9 @@ CREATE TABLE `Invoice` (
   `ProductId` int(11) DEFAULT NULL,
   `IssuingDate` datetime DEFAULT NULL,
   `Note` text DEFAULT NULL,
+  `UnitPrice` NUMERIC NOT NULL DEFAULT (0),
+  `Quantity` SMALLINT NOT NULL  DEFAULT (1),
+  `PriceCut` NUMERIC NOT NULL DEFAULT (0),
   PRIMARY KEY (`Id`),
   KEY `IDX_InvoiceId` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
