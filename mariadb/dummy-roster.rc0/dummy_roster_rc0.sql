@@ -275,8 +275,8 @@ CREATE TABLE `Product` (
   `UnitsOnOrder` SMALLINT NULL DEFAULT (0) CHECK (`UnitsOnOrder`>=0),
   `ReorderLevel` SMALLINT NULL DEFAULT (0) CHECK (`ReorderLevel`>=0),
   `Discontinued` BOOLEAN NOT NULL DEFAULT (0),
-  CONSTRAINT `FK_Product_Category` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`),
-  CONSTRAINT `FK_Product_Supplier` FOREIGN KEY (`SupplierId`) REFERENCES `Supplier` (`Id`),
+  CONSTRAINT `FK_Product_Category` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `FK_Product_Supplier` FOREIGN KEY (`SupplierId`) REFERENCES `Supplier` (`Id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   PRIMARY KEY (`Id`),
   KEY `IDX_ProductName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
