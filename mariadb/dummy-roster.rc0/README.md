@@ -39,3 +39,12 @@ composer create-project laravel/laravel dummy-roster.rc0
 cd dummy-roster.rc0
 php artisan serve
 ```
+
+## some php artisan commands to try
+
+```text
+php artisan migrate --pretend
+php artisan migrate
+php artisan make:model Address --all
+php artisan schema:dump
+```
