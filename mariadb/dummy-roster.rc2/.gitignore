@@ -18,6 +18,7 @@ yarn-error.log
 /.vscode
 
 HELP.md
+LOG.md
 composer.json
 composer.lock
 services.php
