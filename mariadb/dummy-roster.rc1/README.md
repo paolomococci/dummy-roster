@@ -21,6 +21,7 @@ php artisan schema:dump
 
 ## todo
 
+```shell
 php artisan make:model Address --all
 php artisan make:model Carrier --all
 php artisan make:model Category --all
