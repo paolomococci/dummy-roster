@@ -35,3 +35,7 @@ php artisan migrate --pretend
 php artisan migrate
 php artisan schema:dump
 ```
+
+## screenshot of scheme
+
+![scheme of database](screenshots/dummy_roster_rc2.png)
