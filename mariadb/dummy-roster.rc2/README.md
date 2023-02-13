@@ -18,7 +18,7 @@ php artisan migrate
 php artisan schema:dump
 ```
 
-## todo
+## make models
 
 ```shell
 php artisan make:model Address --all
@@ -32,4 +32,5 @@ php artisan make:model Invoice --all
 php artisan make:model Product --all
 php artisan make:model Supplier --all
 php artisan migrate --pretend
+php artisan migrate
 ```
