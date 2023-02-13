@@ -33,4 +33,5 @@ php artisan make:model Product --all
 php artisan make:model Supplier --all
 php artisan migrate --pretend
 php artisan migrate
+php artisan schema:dump
 ```
