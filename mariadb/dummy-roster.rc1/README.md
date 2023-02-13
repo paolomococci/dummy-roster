@@ -17,4 +17,5 @@ php artisan serve
 php artisan migrate --pretend
 php artisan migrate
 php artisan schema:dump
+php artisan make:model Address --all
 ```
