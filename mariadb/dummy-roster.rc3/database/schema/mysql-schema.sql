@@ -109,9 +109,25 @@ DROP TABLE IF EXISTS `employees`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employees` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(16) NOT NULL,
+  `surname` varchar(16) NOT NULL,
+  `nickname` varchar(16) DEFAULT NULL,
+  `username` varchar(32) DEFAULT NULL,
+  `birthdate` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `role` varchar(32) DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `loc` bigint(20) unsigned NULL,
+  `ref` bigint(20) unsigned NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_employee_address` (`loc`),
+  KEY `fk_employee_credential` (`ref`),
+  KEY `idx_employee_name` (`name`),
+  CONSTRAINT `fk_employee_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_employee_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `failed_jobs`;
