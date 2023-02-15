@@ -150,9 +150,26 @@ DROP TABLE IF EXISTS `forms`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `forms` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `description` text DEFAULT NULL,
+  `customer_id` bigint(20) unsigned NULL,
+  `carrier_id` bigint(20) unsigned NULL,
+  `employee_id` bigint(20) unsigned NULL,
+  `formDate` datetime DEFAULT NULL,
+  `required_date` datetime DEFAULT NULL,
+  `promised_date` datetime DEFAULT NULL,
+  `shipping_cost` decimal(10,0) DEFAULT 0 CHECK (`shipping_cost` >= 0),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_customer_id` (`customer_id`),
+  KEY `idx_carrier_id` (`carrier_id`),
+  KEY `idx_employee_id` (`employee_id`),
+  KEY `idx_form_date` (`formDate`),
+  KEY `idx_required_date` (`required_date`),
+  KEY `idx_promised_date` (`promised_date`),
+  CONSTRAINT `fk_form_carrier` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_employee` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `invoices`;
