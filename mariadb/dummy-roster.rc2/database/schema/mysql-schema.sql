@@ -252,7 +252,14 @@ CREATE TABLE `products` (
   `discontinued` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_product_name` (`name`),
+  KEY `idx_category_id` (`categoryId`),
+  KEY `idx_product_belonging_category` (`categoryId`),
+  KEY `idx_supplier_id` (`supplierId`),
+  KEY `idx_product_supplied_by` (`supplierId`),
+  CONSTRAINT `fk_product_category` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_supplier` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `suppliers`;
