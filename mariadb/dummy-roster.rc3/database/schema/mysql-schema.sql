@@ -238,9 +238,28 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `description` text DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `category_id` bigint(20) unsigned NULL,
+  `supplier_id` bigint(20) unsigned NULL,
+  `quantityPerUnit` varchar(24) DEFAULT NULL,
+  `unit_price` decimal(10,0) DEFAULT 0 CHECK (`unit_price` >= 0),
+  `unitsIn_stock` smallint(6) DEFAULT 0 CHECK (`unitsIn_stock` >= 0),
+  `units_on_order` smallint(6) DEFAULT 0 CHECK (`units_on_order` >= 0),
+  `reorder_level` smallint(6) DEFAULT 0 CHECK (`reorder_level` >= 0),
+  `discontinued` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_product_name` (`name`),
+  KEY `idx_category_id` (`category_id`),
+  KEY `idx_product_belonging_category` (`category_id`),
+  KEY `idx_supplier_id` (`supplier_id`),
+  KEY `idx_product_supplied_by` (`supplier_id`),
+  CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `suppliers`;
