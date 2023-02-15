@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `carriers`;
 CREATE TABLE `carriers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
-  `foundationDate` datetime DEFAULT NULL,
+  `foundation_date` datetime DEFAULT NULL,
   `description` text DEFAULT NULL,
   `picture` blob DEFAULT NULL,
   `belonging` varchar(8) DEFAULT NULL,
@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
-  `foundationDate` datetime DEFAULT NULL,
+  `foundation_date` datetime DEFAULT NULL,
   `description` text DEFAULT NULL,
   `picture` blob DEFAULT NULL,
   `belonging` varchar(8) DEFAULT NULL,
@@ -268,7 +268,7 @@ DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
-  `foundationDate` datetime DEFAULT NULL,
+  `foundation_date` datetime DEFAULT NULL,
   `description` text DEFAULT NULL,
   `picture` blob DEFAULT NULL,
   `belonging` varchar(8) DEFAULT NULL,
