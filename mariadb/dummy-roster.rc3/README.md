@@ -45,3 +45,9 @@ php artisan migrate --pretend
 php artisan migrate
 php artisan schema:dump
 ```
+
+## use database tables as models
+
+```shell
+php artisan migrate:fresh
+```
