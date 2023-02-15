@@ -177,9 +177,21 @@ DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoices` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `form_id` bigint(20) unsigned NULL,
+  `product_id` bigint(20) unsigned NULL,
+  `issuing_date` datetime DEFAULT NULL,
+  `note` text DEFAULT NULL,
+  `unit_price` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`unit_price` >= 0),
+  `quantity` smallint(6) NOT NULL DEFAULT 1 CHECK (`quantity` > 0),
+  `price_cut` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`price_cut` >= 0 and `price_cut` < 0.3),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_form_details` (`form_id`),
+  KEY `fk_product_details` (`product_id`),
+  KEY `idx_invoice_id` (`id`),
+  CONSTRAINT `fk_form_details` FOREIGN KEY (`form_id`) REFERENCES `forms` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_details` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `migrations`;
