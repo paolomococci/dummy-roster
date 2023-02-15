@@ -238,6 +238,18 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `description` text DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `categoryId` int(11) DEFAULT NULL,
+  `supplierId` int(11) DEFAULT NULL,
+  `quantityPerUnit` varchar(24) DEFAULT NULL,
+  `unitPrice` decimal(10,0) DEFAULT 0 CHECK (`unitPrice` >= 0),
+  `unitsInStock` smallint(6) DEFAULT 0 CHECK (`unitsInStock` >= 0),
+  `unitsOnOrder` smallint(6) DEFAULT 0 CHECK (`unitsOnOrder` >= 0),
+  `reorderLevel` smallint(6) DEFAULT 0 CHECK (`reorderLevel` >= 0),
+  `discontinued` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
