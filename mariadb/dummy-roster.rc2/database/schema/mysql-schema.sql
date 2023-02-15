@@ -160,7 +160,16 @@ CREATE TABLE `forms` (
   `shippingCost` decimal(10,0) DEFAULT 0 CHECK (`ShippingCost` >= 0),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `idx_customer_id` (`customerId`),
+  KEY `idx_carrier_id` (`carrierId`),
+  KEY `idx_employee_id` (`employeeId`),
+  KEY `idx_form_date` (`formDate`),
+  KEY `idx_required_date` (`requiredDate`),
+  KEY `idx_promised_date` (`promisedDate`),
+  CONSTRAINT `fk_form_carrier` FOREIGN KEY (`carrierId`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_customer` FOREIGN KEY (`customerId`) REFERENCES `customers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_employee` FOREIGN KEY (`employeeId`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `invoices`;
