@@ -267,9 +267,20 @@ DROP TABLE IF EXISTS `suppliers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `suppliers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `foundation_date` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `contact` bigint(20) unsigned NULL,
+  `loc` bigint(20) unsigned NULL,
+  `ref` bigint(20) unsigned NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_supplier_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_supplier_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_supplier_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `users`;
