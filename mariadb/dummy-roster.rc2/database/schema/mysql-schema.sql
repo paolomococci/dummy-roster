@@ -151,9 +151,9 @@ DROP TABLE IF EXISTS `forms`;
 CREATE TABLE `forms` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `description` text DEFAULT NULL,
-  `customerId` int(11) DEFAULT NULL,
-  `carrierId` int(11) DEFAULT NULL,
-  `employeeId` int(11) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `carrier_id` int(11) DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL,
   `formDate` datetime DEFAULT NULL,
   `requiredDate` datetime DEFAULT NULL,
   `promisedDate` datetime DEFAULT NULL,
@@ -161,15 +161,15 @@ CREATE TABLE `forms` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `idx_customer_id` (`customerId`),
-  KEY `idx_carrier_id` (`carrierId`),
-  KEY `idx_employee_id` (`employeeId`),
+  KEY `idx_customer_id` (`customer_id`),
+  KEY `idx_carrier_id` (`carrier_id`),
+  KEY `idx_employee_id` (`employee_id`),
   KEY `idx_form_date` (`formDate`),
   KEY `idx_required_date` (`requiredDate`),
   KEY `idx_promised_date` (`promisedDate`),
-  CONSTRAINT `fk_form_carrier` FOREIGN KEY (`carrierId`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_form_customer` FOREIGN KEY (`customerId`) REFERENCES `customers` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_form_employee` FOREIGN KEY (`employeeId`) REFERENCES `employees` (`id`) ON DELETE CASCADE
+  CONSTRAINT `fk_form_carrier` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_employee` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `invoices`;
@@ -177,8 +177,8 @@ DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoices` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `formId` int(11) DEFAULT NULL,
-  `productId` int(11) DEFAULT NULL,
+  `form_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
   `issuingDate` datetime DEFAULT NULL,
   `note` text DEFAULT NULL,
   `unitPrice` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`unitPrice` >= 0),
@@ -187,11 +187,11 @@ CREATE TABLE `invoices` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_form_details` (`formId`),
-  KEY `fk_product_details` (`productId`),
+  KEY `fk_form_details` (`form_id`),
+  KEY `fk_product_details` (`product_id`),
   KEY `idx_invoice_id` (`id`),
-  CONSTRAINT `fk_form_details` FOREIGN KEY (`formId`) REFERENCES `forms` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_product_details` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
+  CONSTRAINT `fk_form_details` FOREIGN KEY (`form_id`) REFERENCES `forms` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_details` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `migrations`;
@@ -242,8 +242,8 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   `belonging` varchar(8) DEFAULT NULL,
   `picture` blob DEFAULT NULL,
-  `categoryId` int(11) DEFAULT NULL,
-  `supplierId` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `supplier_id` int(11) DEFAULT NULL,
   `quantityPerUnit` varchar(24) DEFAULT NULL,
   `unitPrice` decimal(10,0) DEFAULT 0 CHECK (`unitPrice` >= 0),
   `unitsInStock` smallint(6) DEFAULT 0 CHECK (`unitsInStock` >= 0),
@@ -254,12 +254,12 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_product_name` (`name`),
-  KEY `idx_category_id` (`categoryId`),
-  KEY `idx_product_belonging_category` (`categoryId`),
-  KEY `idx_supplier_id` (`supplierId`),
-  KEY `idx_product_supplied_by` (`supplierId`),
-  CONSTRAINT `fk_product_category` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_product_supplier` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE
+  KEY `idx_category_id` (`category_id`),
+  KEY `idx_product_belonging_category` (`category_id`),
+  KEY `idx_supplier_id` (`supplier_id`),
+  KEY `idx_product_supplied_by` (`supplier_id`),
+  CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `suppliers`;
