@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Credential extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    protected $table = 'credentials';
 }
