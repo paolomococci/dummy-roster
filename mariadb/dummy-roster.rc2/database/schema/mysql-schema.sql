@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS `credentials`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `credentials` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(48) DEFAULT NULL,
   `phone` varchar(24) DEFAULT NULL,
   `fax` varchar(24) DEFAULT NULL,
@@ -83,7 +83,7 @@ DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customers` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `foundationDate` datetime DEFAULT NULL,
   `description` text DEFAULT NULL,
