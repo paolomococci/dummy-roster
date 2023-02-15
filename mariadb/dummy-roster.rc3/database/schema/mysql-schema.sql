@@ -30,9 +30,24 @@ DROP TABLE IF EXISTS `carriers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carriers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `foundation_date` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `contact` bigint(20) unsigned NULL,
+  `loc` bigint(20) unsigned NULL,
+  `ref` bigint(20) unsigned NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_carrier_employee` (`contact`),
+  KEY `fk_carrier_address` (`loc`),
+  KEY `fk_carrier_credential` (`ref`),
+  KEY `idx_carrier_name` (`name`),
+  CONSTRAINT `fk_carrier_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_carrier_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_carrier_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `categories`;
