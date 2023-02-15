@@ -51,3 +51,7 @@ php artisan schema:dump
 ```shell
 php artisan migrate:fresh
 ```
+
+### an image of the database schema
+
+![an image of the database schema](screenshots/database-schema.png)
