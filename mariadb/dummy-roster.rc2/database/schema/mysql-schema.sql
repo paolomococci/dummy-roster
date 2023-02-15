@@ -150,6 +150,14 @@ DROP TABLE IF EXISTS `forms`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `forms` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `description` text DEFAULT NULL,
+  `customerId` int(11) DEFAULT NULL,
+  `carrierId` int(11) DEFAULT NULL,
+  `employeeId` int(11) DEFAULT NULL,
+  `formDate` datetime DEFAULT NULL,
+  `requiredDate` datetime DEFAULT NULL,
+  `promisedDate` datetime DEFAULT NULL,
+  `shippingCost` decimal(10,0) DEFAULT 0 CHECK (`ShippingCost` >= 0),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
