@@ -186,7 +186,12 @@ CREATE TABLE `invoices` (
   `priceCut` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`priceCut` >= 0 and `priceCut` < 0.3),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_form_details` (`formId`),
+  KEY `fk_product_details` (`productId`),
+  KEY `idx_invoice_id` (`id`),
+  CONSTRAINT `fk_form_details` FOREIGN KEY (`formId`) REFERENCES `forms` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_details` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `migrations`;
