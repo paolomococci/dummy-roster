@@ -277,7 +277,10 @@ CREATE TABLE `suppliers` (
   `ref` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_supplier_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_supplier_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_supplier_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `users`;
