@@ -31,16 +31,16 @@ php artisan serve
 ## make models
 
 ```shell
-php artisan make:model Address --all
-php artisan make:model Carrier --all
-php artisan make:model Category --all
-php artisan make:model Credential --all
-php artisan make:model Customer --all
-php artisan make:model Employee --all
-php artisan make:model Form --all
-php artisan make:model Invoice --all
-php artisan make:model Product --all
-php artisan make:model Supplier --all
+php artisan make:model Address -mcrs
+php artisan make:model Carrier -mcrs
+php artisan make:model Category -mcrs
+php artisan make:model Credential -mcrs
+php artisan make:model Customer -mcrs
+php artisan make:model Employee -mcrs
+php artisan make:model Form -mcrs
+php artisan make:model Invoice -mcrs
+php artisan make:model Product -mcrs
+php artisan make:model Supplier -mcrs
 php artisan migrate --pretend
 php artisan migrate
 php artisan schema:dump
