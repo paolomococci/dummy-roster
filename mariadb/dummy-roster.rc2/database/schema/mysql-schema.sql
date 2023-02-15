@@ -18,11 +18,11 @@ CREATE TABLE `addresses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_AddressName` (`Name`),
-  KEY `IDX_AddressCity` (`City`),
-  KEY `IDX_AddressDistrict` (`District`),
-  KEY `IDX_AddressPostcode` (`Postcode`),
-  KEY `IDX_AddressCountry` (`Country`)
+  KEY `idx_address_name` (`name`),
+  KEY `idx_address_city` (`city`),
+  KEY `idx_address_district` (`district`),
+  KEY `idx_address_postcode` (`postcode`),
+  KEY `idx_address_country` (`country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `carriers`;
@@ -30,9 +30,24 @@ DROP TABLE IF EXISTS `carriers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carriers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `foundationDate` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `belonging` varchar(8) DEFAULT NULL,
+  `contact` int(11) DEFAULT NULL,
+  `loc` int(11) DEFAULT NULL,
+  `ref` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_carrier_employee` (`contact`),
+  KEY `fk_carrier_address` (`loc`),
+  KEY `fk_carrier_credential` (`ref`),
+  KEY `idx_carrier_name` (`name`),
+  CONSTRAINT `fk_carrier_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_carrier_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_carrier_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `categories`;
