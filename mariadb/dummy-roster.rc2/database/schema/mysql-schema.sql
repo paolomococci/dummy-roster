@@ -157,7 +157,7 @@ CREATE TABLE `forms` (
   `formDate` datetime DEFAULT NULL,
   `requiredDate` datetime DEFAULT NULL,
   `promisedDate` datetime DEFAULT NULL,
-  `shippingCost` decimal(10,0) DEFAULT 0 CHECK (`ShippingCost` >= 0),
+  `shippingCost` decimal(10,0) DEFAULT 0 CHECK (`shippingCost` >= 0),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -177,6 +177,13 @@ DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoices` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `formId` int(11) DEFAULT NULL,
+  `productId` int(11) DEFAULT NULL,
+  `issuingDate` datetime DEFAULT NULL,
+  `note` text DEFAULT NULL,
+  `unitPrice` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`unitPrice` >= 0),
+  `quantity` smallint(6) NOT NULL DEFAULT 1 CHECK (`quantity` > 0),
+  `priceCut` decimal(10,0) NOT NULL DEFAULT 0 CHECK (`priceCut` >= 0 and `priceCut` < 0.3),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
