@@ -40,12 +40,13 @@ CREATE TEMPORARY TABLE IF NOT EXISTS `products` (
     `selling_price` DECIMAL(10,2) DEFAULT NULL,
     `date_entered` DATETIME DEFAULT_CURRENT_TIMESTAMP,
     `modification_date` TIMESTAMP DEFAULT_CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    KEY `product_line` (`product_line`),
-    CONSTRAINT `fk_product_line` FOREIGN KEY (`product_line` ) REFERENCES `product_lines` (`product_line`)
+    KEY `product_line_id` (`product_line_id`),
+    CONSTRAINT `fk_product_line` FOREIGN KEY (`product_line_id` ) REFERENCES `product_lines` (`product_line_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TEMPORARY TABLE IF NOT EXISTS `product_lines` (
     `product_line_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `line_description` TEXT DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TEMPORARY TABLE IF NOT EXISTS `orders` (
