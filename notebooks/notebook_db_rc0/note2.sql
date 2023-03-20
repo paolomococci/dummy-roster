@@ -115,6 +115,31 @@ CREATE TABLE `customers` (
 
 DESCRIBE `customers`;
 
+DROP TABLE IF EXISTS `forms`;
+CREATE TABLE `forms` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `description` TEXT DEFAULT NULL,
+  `customer_id` BIGINT(20) UNSIGNED NULL,
+  `carrier_id` BIGINT(20) UNSIGNED NULL,
+  `employee_id` BIGINT(20) UNSIGNED NULL,
+  `formDate` DATETIME DEFAULT NULL,
+  `required_date` DATETIME DEFAULT NULL,
+  `promised_date` DATETIME DEFAULT NULL,
+  `shipping_cost` DECIMAL(10,2) DEFAULT 0 CHECK (`shipping_cost` >= 0),
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_customer_id` (`customer_id`),
+  KEY `idx_carrier_id` (`carrier_id`),
+  KEY `idx_employee_id` (`employee_id`),
+  KEY `idx_form_date` (`formDate`),
+  KEY `idx_required_date` (`required_date`),
+  KEY `idx_promised_date` (`promised_date`),
+  CONSTRAINT `fk_form_carrier` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_form_employee` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -123,9 +148,9 @@ CREATE TABLE `suppliers` (
   `description` TEXT DEFAULT NULL,
   `picture` BLOB DEFAULT NULL,
   `belonging` VARCHAR(8) DEFAULT NULL,
-  `contact` BIGINT(20) unsigned NULL,
-  `loc` BIGINT(20) unsigned NULL,
-  `ref` BIGINT(20) unsigned NULL,
+  `contact` BIGINT(20) UNSIGNED NULL,
+  `loc` BIGINT(20) UNSIGNED NULL,
+  `ref` BIGINT(20) UNSIGNED NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
@@ -158,8 +183,8 @@ CREATE TABLE `products` (
   `description` TEXT DEFAULT NULL,
   `belonging` VARCHAR(8) DEFAULT NULL,
   `picture` BLOB DEFAULT NULL,
-  `category_id` BIGINT(20) unsigned NULL,
-  `supplier_id` BIGINT(20) unsigned NULL,
+  `category_id` BIGINT(20) UNSIGNED NULL,
+  `supplier_id` BIGINT(20) UNSIGNED NULL,
   `quantityPerUnit` VARCHAR(24) DEFAULT NULL,
   `unit_price` DECIMAL(10,2) DEFAULT 0 CHECK (`unit_price` >= 0),
   `unitsIn_stock` SMALLINT(6) DEFAULT 0 CHECK (`unitsIn_stock` >= 0),
