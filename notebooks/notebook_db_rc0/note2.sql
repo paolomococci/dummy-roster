@@ -47,3 +47,5 @@ CREATE TABLE `carriers` (
   CONSTRAINT `fk_carrier_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_carrier_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DESCRIBE `carriers`;
