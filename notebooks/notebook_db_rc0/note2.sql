@@ -17,7 +17,12 @@ CREATE TABLE IF NOT EXISTS `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `payments` (
-    `payment_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `customer_id` INT(11) NOT NULL,
+    `check_id` INT(11) NOT NULL,
+    `payment_date` DATE NOT NULL,
+    `amount` DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (`customer_id`, `check_id`),
+    CONSTRAINT `fk_payments` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `products` (
