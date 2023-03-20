@@ -89,3 +89,26 @@ CREATE TABLE `carriers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DESCRIBE `carriers`;
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(32) NOT NULL,
+  `foundation_date` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `belonging` VARCHAR(8) DEFAULT NULL,
+  `contact` BIGINT(20) UNSIGNED NULL,
+  `loc` BIGINT(20) UNSIGNED NULL,
+  `ref` BIGINT(20) UNSIGNED NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_customer_employee` (`contact`),
+  KEY `fk_customer_address` (`loc`),
+  KEY `fk_customer_credential` (`ref`),
+  KEY `idx_customer_name` (`name`),
+  CONSTRAINT `fk_customer_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_customer_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_customer_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
