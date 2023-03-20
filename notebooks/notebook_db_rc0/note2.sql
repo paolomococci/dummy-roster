@@ -94,8 +94,8 @@ DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(32) NOT NULL,
-  `foundation_date` datetime DEFAULT NULL,
-  `description` text DEFAULT NULL,
+  `foundation_date` DATETIME DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
   `picture` blob DEFAULT NULL,
   `belonging` VARCHAR(8) DEFAULT NULL,
   `contact` BIGINT(20) UNSIGNED NULL,
@@ -112,3 +112,5 @@ CREATE TABLE `customers` (
   CONSTRAINT `fk_customer_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_customer_employee` FOREIGN KEY (`contact`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DESCRIBE `customers`;
