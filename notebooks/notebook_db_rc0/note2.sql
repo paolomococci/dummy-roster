@@ -21,3 +21,7 @@ CREATE TABLE IF NOT EXISTS `order_details` (
 CREATE TABLE IF NOT EXISTS `employees` (
     
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `offices` (
+    
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
