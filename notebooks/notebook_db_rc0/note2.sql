@@ -1,5 +1,3 @@
-USE DATABASE `notebook_db_rc0`;
-
 CREATE TEMPORARY TABLE IF NOT EXISTS `customers` (
     `customer_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `customer_name` VARCHAR(64) NOT NULL,
