@@ -1,3 +1,5 @@
+SHOW DATABASES;
+
 DROP TABLE IF EXISTS `addresses`;
 CREATE TEMPORARY TABLE `addresses` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -8,7 +10,7 @@ CREATE TEMPORARY TABLE `addresses` (
   `postcode` varchar(8) DEFAULT NULL,
   `country` varchar(16) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_address_name` (`name`),
   KEY `idx_address_city` (`city`),
