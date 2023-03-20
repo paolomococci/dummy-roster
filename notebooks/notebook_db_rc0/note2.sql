@@ -22,3 +22,5 @@ CREATE TABLE `addresses` (
   KEY `idx_address_postcode` (`postcode`),
   KEY `idx_address_country` (`country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DESCRIBE `addresses`;
