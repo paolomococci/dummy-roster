@@ -148,3 +148,5 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`id`),
   KEY `idx_category_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DESCRIBE `categories`;
