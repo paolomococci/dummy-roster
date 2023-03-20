@@ -39,6 +39,30 @@ CREATE TABLE `credentials` (
 
 DESCRIBE `credentials`;
 
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(16) NOT NULL,
+  `surname` VARCHAR(16) NOT NULL,
+  `nickname` VARCHAR(16) DEFAULT NULL,
+  `username` VARCHAR(32) DEFAULT NULL,
+  `birth_date` datetime DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `role` VARCHAR(32) DEFAULT NULL,
+  `belonging` VARCHAR(8) DEFAULT NULL,
+  `loc` BIGINT(20) UNSIGNED NULL,
+  `ref` BIGINT(20) UNSIGNED NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_employee_address` (`loc`),
+  KEY `fk_employee_credential` (`ref`),
+  KEY `idx_employee_name` (`name`),
+  CONSTRAINT `fk_employee_address` FOREIGN KEY (`loc`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_employee_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 DROP TABLE IF EXISTS `carriers`;
 CREATE TABLE `carriers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
