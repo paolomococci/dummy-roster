@@ -9,3 +9,5 @@ SELECT * FROM `note_one`;
 
 INSERT INTO `note_one` (`title`, `description`)
 VALUES ('someone', 'some description of someone');
+
+TRUNCATE `note_one`;
