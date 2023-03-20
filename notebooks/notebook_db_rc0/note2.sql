@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS `customers` (
     `country` VARCHAR(64) DEFAULT NULL,
     `sales` INT(11) DEFAULT NULL,
     `credit_limit` DECIMAL(10,2) DEFAULT NULL,
+    `date_entered` DATETIME DEFAULT_CURRENT_TIMESTAMP,
+    `modification_date` TIMESTAMP DEFAULT_CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     KEY `sales` (`sales`),
     CONSTRAIN `fk_customer_employee` FOREIGN KEY (`sales`) REFERENCES `employees` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -28,6 +30,13 @@ CREATE TABLE IF NOT EXISTS `payments` (
 
 CREATE TABLE IF NOT EXISTS `products` (
     `product_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `product_name` VARCHAR(64) NOT NULL,
+    `product_line_id` INT(11) NOT NULL,
+    `product_supplier_name` VARCHAR(64) DEFAULT NULL,
+    `product_description` TEXT DEFAULT NULL,
+    `stock_quantity` SMALLINT(6) DEFAULT NULL,
+    `buy_price` DECIMAL(10,2) DEFAULT NULL,
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `product_lines` (
