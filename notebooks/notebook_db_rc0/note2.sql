@@ -1,7 +1,11 @@
 SHOW DATABASES;
 
+USE `notebook_db_rc0`;
+
+SHOW TABLES;
+
 DROP TABLE IF EXISTS `addresses`;
-CREATE TEMPORARY TABLE `addresses` (
+CREATE TABLE `addresses` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) DEFAULT NULL,
   `civic` varchar(16) DEFAULT NULL,
