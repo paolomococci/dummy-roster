@@ -7,6 +7,8 @@ CREATE TABLE
         `description` CHAR(255) DEFAULT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
+DESCRIBE `note_one`;
+
 SELECT * FROM `note_one` WHERE `description` IS NOT NULL;
 
 INSERT INTO
