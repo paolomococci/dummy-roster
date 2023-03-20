@@ -63,6 +63,8 @@ CREATE TABLE `employees` (
   CONSTRAINT `fk_employee_credential` FOREIGN KEY (`ref`) REFERENCES `credentials` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DESCRIBE `employees`;
+
 DROP TABLE IF EXISTS `carriers`;
 CREATE TABLE `carriers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
