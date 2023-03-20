@@ -51,6 +51,14 @@ CREATE TEMPORARY TABLE IF NOT EXISTS `product_lines` (
 
 CREATE TEMPORARY TABLE IF NOT EXISTS `orders` (
     `order_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `order_date` DATE NOT NULL,
+    `required_date` DATE DEFAULT NULL,
+    `shipped_date` DATE DEFAULT NULL,
+    `status` VARCHAR(16) DEFAULT NULL,
+    `comment` TEXT DEFAULT NULL,
+    `customer_id` INT(11) DEFAULT NULL,
+    KEY `customer_id` (`customer_id`),
+    CONSTRAINT `fk_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TEMPORARY TABLE IF NOT EXISTS `order_details` (
