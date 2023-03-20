@@ -37,6 +37,8 @@ CREATE TABLE `credentials` (
   KEY `idx_credential_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DESCRIBE `credentials`;
+
 DROP TABLE IF EXISTS `carriers`;
 CREATE TABLE `carriers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
