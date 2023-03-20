@@ -206,3 +206,23 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DESCRIBE `products`;
+
+DROP TABLE IF EXISTS `invoices`;
+CREATE TABLE `invoices` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `form_id` BIGINT(20) UNSIGNED NULL,
+  `product_id` BIGINT(20) UNSIGNED NULL,
+  `issuing_date` DATETIME DEFAULT NULL,
+  `note` TEXT DEFAULT NULL,
+  `unit_price` DECIMAL(10,2) NOT NULL DEFAULT 0 CHECK (`unit_price` >= 0),
+  `quantity` SMALLINT(6) NOT NULL DEFAULT 1 CHECK (`quantity` > 0),
+  `price_cut` DECIMAL(10,2) NOT NULL DEFAULT 0 CHECK (`price_cut` >= 0 and `price_cut` < 0.3),
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_form_details` (`form_id`),
+  KEY `fk_product_details` (`product_id`),
+  KEY `idx_invoice_id` (`id`),
+  CONSTRAINT `fk_form_details` FOREIGN KEY (`form_id`) REFERENCES `forms` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_product_details` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
