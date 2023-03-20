@@ -11,3 +11,11 @@ INSERT INTO `note_one` (`title`, `description`)
 VALUES ('someone', 'some description of someone');
 
 TRUNCATE `note_one`;
+
+INSERT INTO `note_one` (`title`, `description`)
+VALUES 
+    ('title 1', 'description 1'),
+    ('title 2', 'description 2'),
+    ('title 3', 'description 3'),
+    ('title 4', 'description 4'),
+    ('title 5', 'description 5');
