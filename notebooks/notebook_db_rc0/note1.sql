@@ -6,3 +6,6 @@ CREATE TABLE IF NOT EXISTS `note_one`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 SELECT * FROM `note_one`;
+
+INSERT INTO `note_one` (`title`, `description`)
+VALUES ('someone', 'some description of someone');
