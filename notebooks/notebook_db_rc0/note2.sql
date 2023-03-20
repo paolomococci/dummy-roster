@@ -140,6 +140,8 @@ CREATE TABLE `forms` (
   CONSTRAINT `fk_form_employee` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DESCRIBE `forms`;
+
 DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
