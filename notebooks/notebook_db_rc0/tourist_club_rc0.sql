@@ -18,3 +18,5 @@ CREATE TABLE `driver_id_types` (
     `id` INT(11) DEFAULT NULL,
     `type` VARCHAR(255) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `driver_id_types`;
