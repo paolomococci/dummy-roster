@@ -16,3 +16,5 @@ FROM @tables;
 EXECUTE cleaning_statement;
 DEALLOCATE PREPARE cleaning_statement;
 SET FOREIGN_KEY_CHECKS = 1;
+
+SHOW TABLES;
