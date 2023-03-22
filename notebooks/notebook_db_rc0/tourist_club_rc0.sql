@@ -74,3 +74,5 @@ VALUES (
     8, ''
 );
 UNLOCK TABLES;
+
+SELECT * FROM `brands`;
