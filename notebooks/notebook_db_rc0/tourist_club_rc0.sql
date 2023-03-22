@@ -278,3 +278,37 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `registrations`;
+
+
+/*markdown
+### addresses table
+*/
+
+DROP TABLE IF EXISTS `addresses`;
+CREATE TABLE `addresses` (
+    `id` INT(11) DEFAULT NULL,
+    `name` VARCHAR(30) DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+LOCK TABLES `addresses` WRITE;
+INSERT INTO `addresses` (`id`, `name`)
+VALUES (
+    1, ''
+), (
+    2, ''
+), (
+    3, ''
+), (
+    4, ''
+), (
+    5, ''
+), (
+    6, ''
+), (
+    7, ''
+), (
+    8, ''
+);
+UNLOCK TABLES;
+
+SELECT * FROM `addresses`;
