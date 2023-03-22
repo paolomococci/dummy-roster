@@ -143,7 +143,6 @@ UNLOCK TABLES;
 
 SELECT * FROM `vehicle_models`;
 
-
 /*markdown
 ### vehicle_types table
 */
@@ -176,7 +175,6 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `vehicle_types`;
-
 
 /*markdown
 ### vehicle_use_types table
@@ -211,7 +209,6 @@ UNLOCK TABLES;
 
 SELECT * FROM `vehicle_use_types`;
 
-
 /*markdown
 ### vehicle_variant_types table
 */
@@ -244,7 +241,6 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `vehicle_variant_types`;
-
 
 /*markdown
 ### registrations table
@@ -279,7 +275,6 @@ UNLOCK TABLES;
 
 SELECT * FROM `registrations`;
 
-
 /*markdown
 ### addresses table
 */
@@ -312,7 +307,6 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `addresses`;
-
 
 /*markdown
 ### supporting_members table
@@ -347,7 +341,6 @@ UNLOCK TABLES;
 
 SELECT * FROM `supporting_members`;
 
-
 /*markdown
 ### member_cards table
 */
@@ -380,7 +373,6 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `member_cards`;
-
 
 /*markdown
 ### registered_vehicles table
