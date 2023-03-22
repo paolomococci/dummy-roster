@@ -10,7 +10,7 @@ USE `notebook_db_rc0`;
 SHOW TABLES;
 
 /*markdown
-### driver's ID type table
+### driver_id_types table
 */
 
 DROP TABLE IF EXISTS `driver_id_types`;
@@ -109,3 +109,36 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `countries`;
+
+/*markdown
+### vehicle_models table
+*/
+
+DROP TABLE IF EXISTS `vehicle_models`;
+CREATE TABLE `vehicle_models` (
+    `id` INT(11) DEFAULT NULL,
+    `name` VARCHAR(30) DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+LOCK TABLES `vehicle_models` WRITE;
+INSERT INTO `vehicle_models` (`id`, `name`)
+VALUES (
+    1, ''
+), (
+    2, ''
+), (
+    3, ''
+), (
+    4, ''
+), (
+    5, ''
+), (
+    6, ''
+), (
+    7, ''
+), (
+    8, ''
+);
+UNLOCK TABLES;
+
+SELECT * FROM `vehicle_models`;
