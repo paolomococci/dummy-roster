@@ -57,21 +57,21 @@ CREATE TABLE `brands` (
 LOCK TABLES `brands` WRITE;
 INSERT INTO `brands` (`id`, `name`)
 VALUES (
-    1, ''
+    1, 'Alpha'
 ), (
-    2, ''
+    2, 'Beta'
 ), (
-    3, ''
+    3, 'Gamma'
 ), (
-    4, ''
+    4, 'Delta'
 ), (
-    5, ''
+    5, 'Epsilon'
 ), (
-    6, ''
+    6, 'Zeta'
 ), (
-    7, ''
+    7, 'Eta'
 ), (
-    8, ''
+    8, 'Theta'
 );
 UNLOCK TABLES;
 
