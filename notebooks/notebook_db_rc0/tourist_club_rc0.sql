@@ -142,3 +142,37 @@ VALUES (
 UNLOCK TABLES;
 
 SELECT * FROM `vehicle_models`;
+
+
+/*markdown
+### vehicle_types table
+*/
+
+DROP TABLE IF EXISTS `vehicle_types`;
+CREATE TABLE `vehicle_types` (
+    `id` INT(11) DEFAULT NULL,
+    `name` VARCHAR(30) DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+LOCK TABLES `vehicle_types` WRITE;
+INSERT INTO `vehicle_types` (`id`, `name`)
+VALUES (
+    1, ''
+), (
+    2, ''
+), (
+    3, ''
+), (
+    4, ''
+), (
+    5, ''
+), (
+    6, ''
+), (
+    7, ''
+), (
+    8, ''
+);
+UNLOCK TABLES;
+
+SELECT * FROM `vehicle_types`;
