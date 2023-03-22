@@ -20,3 +20,26 @@ CREATE TABLE `driver_id_types` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `driver_id_types`;
+
+LOCK TABLES `driver_id_types` WRITE;
+INSERT INTO `driver_id_types` (`id`, `type`)
+VALUES (
+    1, 'mopeds'
+), (
+    2, 'motorcycles'
+), (
+    3, 'cars'
+), (
+    4, 'light trucks'
+), (
+    5, 'heavy trucks'
+), (
+    6, 'trucks with trailers'
+), (
+    7, 'bus'
+), (
+    8, 'bus with trailer'
+);
+UNLOCK TABLES;
+
+SELECT * FROM `driver_id_types`;
