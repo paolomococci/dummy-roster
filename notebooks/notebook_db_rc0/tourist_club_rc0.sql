@@ -306,6 +306,10 @@ VALUES (
     15, 'cabriolet'
 ), (
     16, 'coupe'
+), (
+    17, 'pick-up'
+), (
+    18, 'suv'
 );
 UNLOCK TABLES;
 
@@ -318,27 +322,21 @@ SELECT * FROM `vehicle_models`;
 DROP TABLE IF EXISTS `vehicle_types`;
 CREATE TABLE `vehicle_types` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `type` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `vehicle_types` WRITE;
-INSERT INTO `vehicle_types` (`id`, `name`)
+INSERT INTO `vehicle_types` (`id`, `type`)
 VALUES (
-    1, ''
+    1, 'without-doors'
 ), (
-    2, ''
+    2, '2-door'
 ), (
-    3, ''
+    3, '3-door'
 ), (
-    4, ''
+    4, '4-door'
 ), (
-    5, ''
-), (
-    6, ''
-), (
-    7, ''
-), (
-    8, ''
+    5, '5-door'
 );
 UNLOCK TABLES;
 
