@@ -185,3 +185,27 @@ CREATE TABLE `addresses` (
 */
 
 DESCRIBE `addresses`;
+
+/*markdown
+## I create the table movies
+*/
+
+DROP TABLE IF EXISTS `movies`;
+CREATE TABLE `movies` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(100) NOT NULL,
+  `subtitle` VARCHAR(100) DEFAULT NULL,
+  `description` VARCHAR(255) DEFAULT NULL,
+  `preview` DATE NOT NULL,
+  `duration` time NOT NULL,
+  `cost` DECIMAL(10,2) NOT NULL,
+  `rent` DECIMAL(10,2) NOT NULL,
+  `rating` DECIMAL(10,2) DEFAULT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `language_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `movie_to_language_fk` (`language_fk`),
+  FULLTEXT KEY `movie_title_IDX` (`title`,`subtitle`),
+  CONSTRAINT `movie_to_language_fk` FOREIGN KEY (`language_fk`) REFERENCES `languages` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
