@@ -29,6 +29,12 @@ CREATE TABLE `cities` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
+### I check the structure of table cities
+*/
+
+DESCRIBE `cities`;
+
+/*markdown
 ## I create the table districts
 */
 
