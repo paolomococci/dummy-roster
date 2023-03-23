@@ -13,6 +13,22 @@ USE `notebook_db_rc1`;
 SHOW TABLES;
 
 /*markdown
+## I create the table countries
+*/
+
+DROP TABLE IF EXISTS `countries`;
+CREATE TABLE `countries` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `iso3166_id` BIGINT(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `country_to_iso3166_fk` (`iso3166_id`),
+  CONSTRAINT `country_to_iso3166_fk` FOREIGN KEY (`iso3166_id`) REFERENCES `iso3166` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
 ## I create the table cities
 */
 
