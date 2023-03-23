@@ -1,3 +1,7 @@
+/*markdown
+# scripts to delete all the contents of the database
+*/
+
 USE `notebook_db_rc1`;
 SHOW TABLES;
 SET FOREIGN_KEY_CHECKS = 0;
