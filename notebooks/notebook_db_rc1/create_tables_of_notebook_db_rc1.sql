@@ -401,3 +401,15 @@ CREATE TABLE `payments` (
 */
 
 DESCRIBE `payments`;
+
+/*markdown
+## I create the pivot table movie_category
+*/
+
+/*markdown
+## I create the pivot table movie_content
+*/
+
+/*markdown
+## I create the pivot table movie_player
+*/
