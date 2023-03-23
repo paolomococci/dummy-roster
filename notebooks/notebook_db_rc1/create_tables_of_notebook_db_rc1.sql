@@ -209,3 +209,9 @@ CREATE TABLE `movies` (
   FULLTEXT KEY `movie_title_IDX` (`title`,`subtitle`),
   CONSTRAINT `movie_to_language_fk` FOREIGN KEY (`language_fk`) REFERENCES `languages` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of the table movies
+*/
+
+DESCRIBE `movies`;
