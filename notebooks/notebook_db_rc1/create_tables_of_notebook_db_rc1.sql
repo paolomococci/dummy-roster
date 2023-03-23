@@ -337,3 +337,9 @@ CREATE TABLE `customers` (
   CONSTRAINT `customer_to_address_fk` FOREIGN KEY (`address_fk`) REFERENCES `addresses` (`id`) ON DELETE SET NULL,
   CONSTRAINT `customer_to_store_fk` FOREIGN KEY (`store_fk`) REFERENCES `stores` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of table customers
+*/
+
+DESCRIBE `customer`;
