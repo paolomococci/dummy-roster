@@ -342,4 +342,4 @@ CREATE TABLE `customers` (
 ### I check the structure of table customers
 */
 
-DESCRIBE `customer`;
+DESCRIBE `customers`;
