@@ -454,3 +454,9 @@ CREATE TABLE `movie_player` (
   CONSTRAINT `movie_player_to_movie_fk` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`),
   CONSTRAINT `movie_player_to_player_fk` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of pivot table movie_player
+*/
+
+DESCRIBE `movie_player`;
