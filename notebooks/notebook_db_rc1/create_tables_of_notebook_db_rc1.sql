@@ -343,3 +343,26 @@ CREATE TABLE `customers` (
 */
 
 DESCRIBE `customers`;
+
+/*markdown
+## I create the table rentals
+*/
+
+DROP TABLE IF EXISTS `rentals`;
+CREATE TABLE `rentals` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `rent` DATE NOT NULL,
+  `back` DATE NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `inventory_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `customer_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `human_resource_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rental_to_inventory_fk` (`inventory_fk`),
+  KEY `rental_to_customer_fk` (`customer_fk`),
+  KEY `rental_to_human_resource_fk` (`human_resource_fk`),
+  CONSTRAINT `rental_to_customer_fk` FOREIGN KEY (`customer_fk`) REFERENCES `customers` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `rental_to_inventory_fk` FOREIGN KEY (`inventory_fk`) REFERENCES `inventories` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `rental_to_human_resource_fk` FOREIGN KEY (`human_resource_fk`) REFERENCES `human_resources` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
