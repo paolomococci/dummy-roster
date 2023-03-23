@@ -405,7 +405,7 @@ SELECT * FROM `vehicle_variant_types`;
 DROP TABLE IF EXISTS `registrations`;
 CREATE TABLE `registrations` (
     `id` INT(11) DEFAULT NULL,
-    `trimester` VARCHAR(30) DEFAULT NULL
+    `trimester` VARCHAR(30) DEFAULT NULL,
     `year` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
@@ -511,7 +511,7 @@ SELECT * FROM `registrations`;
 DROP TABLE IF EXISTS `addresses`;
 CREATE TABLE `addresses` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `street` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `addresses` WRITE;
