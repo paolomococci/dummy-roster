@@ -2,6 +2,8 @@
 # create the tables of a hypothetical movie store
 */
 
+SHOW DATABASES;
+
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
