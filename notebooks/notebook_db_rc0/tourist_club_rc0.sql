@@ -302,6 +302,10 @@ VALUES (
     13, 'amphibian'
 ), (
     14, 'armored'
+), (
+    15, 'cabriolet'
+), (
+    16, 'coupe'
 );
 UNLOCK TABLES;
 
