@@ -90,21 +90,173 @@ CREATE TABLE `countries` (
 LOCK TABLES `countries` WRITE;
 INSERT INTO `countries` (`id`, `name`)
 VALUES (
-    1, ''
+    1, 'Albania'
 ), (
-    2, ''
+    2, 'Algeria'
 ), (
-    3, ''
+    3, 'Andorra'
 ), (
-    4, ''
+    4, 'Argentina'
 ), (
-    5, ''
+    5, 'Australia'
 ), (
-    6, ''
+    6, 'Austria'
 ), (
-    7, ''
+    7, 'Belgium'
 ), (
-    8, ''
+    8, 'Bhutan'
+), (
+    9, 'Bosnia and Herzegovina'
+), (
+    10, 'Bulgaria'
+), (
+    11, 'Cambodia'
+), (
+    12, 'Canada'
+), (
+    13, 'Chile'
+), (
+    14, 'Colombia'
+), (
+    15, 'Croatia'
+), (
+    16, 'Cyprus'
+), (
+    17, 'Czech Republic'
+), (
+    18, 'Denmark'
+), (
+    19, 'Dominican Republic'
+), (
+    20, 'Ecuador'
+), (
+    21, 'Egypt'
+), (
+    22, 'Estonia'
+), (
+    23, 'Finland'
+), (
+    24, 'France'
+), (
+    25, 'Georgia'
+), (
+    26, 'Germany'
+), (
+    27, 'Greece'
+), (
+    28, 'Hungary'
+), (
+    29, 'Iceland'
+), (
+    30, 'India'
+), (
+    31, 'Indonesia'
+), (
+    32, 'Ireland'
+), (
+    33, 'Israel'
+), (
+    34, 'Italy'
+), (
+    35, 'Japan'
+), (
+    36, 'Jordan'
+), (
+    37, 'Latvia'
+), (
+    38, 'Lebanon'
+), (
+    39, 'Liechtenstein'
+), (
+    40, 'Lithuania'
+), (
+    41, 'Luxembourg'
+), (
+    42, 'Madagascar'
+), (
+    43, 'Malawi'
+), (
+    44, 'Malaysia'
+), (
+    45, 'Malta'
+), (
+    46, 'Mexico'
+), (
+    47, 'Monaco'
+), (
+    48, 'Mongolia'
+), (
+    49, 'Montenegro'
+), (
+    50, 'Morocco'
+), (
+    51, 'Mozambique'
+), (
+    52, 'Namibia'
+), (
+    53, 'Nepal'
+), (
+    54, 'Netherlands'
+), (
+    55, 'New Zealand'
+), (
+    56, 'North Macedonia'
+), (
+    57, 'Norway'
+), (
+    58, 'Paraguay'
+), (
+    59, 'Peru'
+), (
+    60, 'Philippines'
+), (
+    61, 'Poland'
+), (
+    62, 'Portugal'
+), (
+    63, 'Republic of Korea'
+), (
+    64, 'Republic of Moldova'
+), (
+    65, 'Romania'
+), (
+    66, 'Rwanda'
+), (
+    67, 'San Marino'
+), (
+    68, 'Saudi Arabia'
+), (
+    69, 'Senegal'
+), (
+    70, 'Serbia'
+), (
+    71, 'Singapore'
+), (
+    72, 'Slovakia'
+), (
+    73, 'Slovenia'
+), (
+    74, 'Spain'
+), (
+    75, 'Sweden'
+), (
+    76, 'Switzerland'
+), (
+    77, 'Taiwan'
+), (
+    78, 'Thailand'
+), (
+    79, 'Tunisia'
+), (
+    80, 'Turkey'
+), (
+    81, 'Ukraine'
+), (
+    82, 'United States of America'
+), (
+    83, 'Uruguay'
+), (
+    84, 'Zambia'
 );
 UNLOCK TABLES;
 
