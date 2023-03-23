@@ -27,6 +27,12 @@ CREATE TABLE `categories` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
+### I check the structure of table categories
+*/
+
+DESCRIBE `categories`;
+
+/*markdown
 ## I create the table iso3166
 */
 
