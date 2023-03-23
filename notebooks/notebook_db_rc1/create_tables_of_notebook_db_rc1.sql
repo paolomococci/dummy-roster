@@ -242,3 +242,27 @@ DESCRIBE `stores`;
 /*markdown
 ## I create the table human_resources
 */
+
+DROP TABLE IF EXISTS `human_resources`;
+CREATE TABLE `human_resources` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `nickname` VARCHAR(100) DEFAULT NULL,
+  `surname` VARCHAR(100) NOT NULL,
+  `picture` blob DEFAULT NULL,
+  `phone` VARCHAR(20) DEFAULT NULL,
+  `mobile` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(20) NOT NULL,
+  `active` TINYINT(1) NOT NULL DEFAULT 1,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `address_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `store_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `human_resource_to_address_fk` (`address_fk`),
+  KEY `human_resource_to_store_fk` (`store_fk`),
+  CONSTRAINT `human_resource_to_address_fk` FOREIGN KEY (`address_fk`) REFERENCES `address` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `human_resource_to_store_fk` FOREIGN KEY (`store_fk`) REFERENCES `stores` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
