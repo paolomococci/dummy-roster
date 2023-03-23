@@ -16,8 +16,8 @@ SHOW TABLES;
 ## I create the table addresses
 */
 
-DROP TABLE IF EXISTS `address`;
-CREATE TABLE `address` (
+DROP TABLE IF EXISTS `addresses`;
+CREATE TABLE `addresses` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `civic` VARCHAR(10) NOT NULL,
