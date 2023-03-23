@@ -4,6 +4,8 @@
 
 SHOW DATABASES;
 
+USE `notebook_db_rc1`;
+
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
