@@ -215,3 +215,7 @@ CREATE TABLE `movies` (
 */
 
 DESCRIBE `movies`;
+
+/*markdown
+## I create the table stores
+*/
