@@ -238,3 +238,7 @@ CREATE TABLE `stores` (
 */
 
 DESCRIBE `stores`;
+
+/*markdown
+## I create the table human_resources
+*/
