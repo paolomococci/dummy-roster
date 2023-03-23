@@ -269,11 +269,11 @@ SELECT * FROM `countries`;
 DROP TABLE IF EXISTS `vehicle_models`;
 CREATE TABLE `vehicle_models` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `model` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `vehicle_models` WRITE;
-INSERT INTO `vehicle_models` (`id`, `name`)
+INSERT INTO `vehicle_models` (`id`, `model`)
 VALUES (
     1, ''
 ), (
@@ -290,6 +290,48 @@ VALUES (
     7, ''
 ), (
     8, ''
+), (
+    9, ''
+), (
+    10, ''
+), (
+    11, ''
+), (
+    12, ''
+), (
+    13, ''
+), (
+    14, ''
+), (
+    15, ''
+), (
+    16, ''
+), (
+    17, ''
+), (
+    18, ''
+), (
+    19, ''
+), (
+    20, ''
+), (
+    21, ''
+), (
+    22, ''
+), (
+    23, ''
+), (
+    24, ''
+), (
+    25, ''
+), (
+    26, ''
+), (
+    27, ''
+), (
+    28, ''
+), (
+    29, ''
 );
 UNLOCK TABLES;
 
