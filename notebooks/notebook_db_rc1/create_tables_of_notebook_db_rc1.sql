@@ -305,3 +305,9 @@ CREATE TABLE `inventories` (
   CONSTRAINT `inventory_to_store_fk` FOREIGN KEY (`store_fk`) REFERENCES `stores` (`id`) ON DELETE SET NULL,
   CONSTRAINT `inventory_to_movie_fk` FOREIGN KEY (`movie_fk`) REFERENCES `movies` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of table inventories
+*/
+
+DESCRIBE `inventories`;
