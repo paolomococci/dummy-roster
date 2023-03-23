@@ -511,27 +511,34 @@ SELECT * FROM `registrations`;
 DROP TABLE IF EXISTS `addresses`;
 CREATE TABLE `addresses` (
     `id` INT(11) DEFAULT NULL,
-    `street` VARCHAR(30) DEFAULT NULL
+    `street` VARCHAR(30) DEFAULT NULL,
+    `civic` VARCHAR(30) DEFAULT NULL,
+    `town` VARCHAR(30) DEFAULT NULL,
+    `post_code` VARCHAR(30) DEFAULT NULL,
+    `state` VARCHAR(30) DEFAULT NULL,
+    `country` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `addresses` WRITE;
-INSERT INTO `addresses` (`id`, `name`)
+INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `state`, `country`)
 VALUES (
-    1, ''
+    1, '', '', '', '', '', ''
 ), (
-    2, ''
+    2, '', '', '', '', '', ''
 ), (
-    3, ''
+    3, '', '', '', '', '', ''
 ), (
-    4, ''
+    4, '', '', '', '', '', ''
 ), (
-    5, ''
+    5, '', '', '', '', '', ''
 ), (
-    6, ''
+    6, '', '', '', '', '', ''
 ), (
-    7, ''
+    7, '', '', '', '', '', ''
 ), (
-    8, ''
+    8, '', '', '', '', '', ''
+), (
+    9, '', '', '', '', '', ''
 );
 UNLOCK TABLES;
 
