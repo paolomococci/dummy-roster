@@ -219,3 +219,16 @@ DESCRIBE `movies`;
 /*markdown
 ## I create the table stores
 */
+
+DROP TABLE IF EXISTS `stores`;
+CREATE TABLE `stores` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `address_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `store_name_IDX` (`name`) USING BTREE,
+  KEY `store_to_address_fk` (`address_fk`),
+  CONSTRAINT `store_to_address_fk` FOREIGN KEY (`address_fk`) REFERENCES `address` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
