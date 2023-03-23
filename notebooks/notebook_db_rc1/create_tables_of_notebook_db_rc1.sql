@@ -31,6 +31,12 @@ CREATE TABLE `iso3166` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
+### I check the structure of table iso3166
+*/
+
+DESCRIBE `iso3166`;
+
+/*markdown
 ## I create the table countries
 */
 
