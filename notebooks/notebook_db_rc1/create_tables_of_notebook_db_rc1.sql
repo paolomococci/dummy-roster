@@ -395,3 +395,9 @@ CREATE TABLE `payments` (
   CONSTRAINT `payment_to_rental_fk` FOREIGN KEY (`rental_fk`) REFERENCES `rentals` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `payment_to_human_resource_fk` FOREIGN KEY (`human_resource_fk`) REFERENCES `human_resources` (`id`) ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of table payments
+*/
+
+DESCRIBE `payments`;
