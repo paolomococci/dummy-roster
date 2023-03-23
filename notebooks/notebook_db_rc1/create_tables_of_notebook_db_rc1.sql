@@ -420,6 +420,16 @@ CREATE TABLE `movie_category` (
 ## I create the pivot table movie_content
 */
 
+DROP TABLE IF EXISTS `movie_content`;
+CREATE TABLE `movie_content` (
+  `movie_id` BIGINT(20) UNSIGNED NOT NULL,
+  `content_id` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`movie_id`,`content_id`),
+  KEY `movie_content_to_content_fk` (`content_id`),
+  CONSTRAINT `movie_content_to_content_fk` FOREIGN KEY (`content_id`) REFERENCES `contents` (`id`),
+  CONSTRAINT `movie_content_to_movie_fk` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
 /*markdown
 ## I create the pivot table movie_player
 */
