@@ -287,3 +287,21 @@ CREATE TABLE `human_resources` (
 */
 
 DESCRIBE `human_resources`;
+
+/*markdown
+## I create the table inventories
+*/
+
+DROP TABLE IF EXISTS `inventories`;
+CREATE TABLE `inventories` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `store_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `movie_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `inventory_to_store_fk` (`store_fk`),
+  KEY `inventory_to_movie_fk` (`movie_fk`),
+  CONSTRAINT `inventory_to_store_fk` FOREIGN KEY (`store_fk`) REFERENCES `stores` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `inventory_to_movie_fk` FOREIGN KEY (`movie_fk`) REFERENCES `movies` (`id`) ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
