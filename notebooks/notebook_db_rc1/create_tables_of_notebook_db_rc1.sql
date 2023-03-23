@@ -366,3 +366,9 @@ CREATE TABLE `rentals` (
   CONSTRAINT `rental_to_inventory_fk` FOREIGN KEY (`inventory_fk`) REFERENCES `inventories` (`id`) ON DELETE SET NULL,
   CONSTRAINT `rental_to_human_resource_fk` FOREIGN KEY (`human_resource_fk`) REFERENCES `human_resources` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of table rentals
+*/
+
+DESCRIBE `rentals`;
