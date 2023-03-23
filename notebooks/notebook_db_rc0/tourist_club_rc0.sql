@@ -405,27 +405,30 @@ SELECT * FROM `vehicle_variant_types`;
 DROP TABLE IF EXISTS `registrations`;
 CREATE TABLE `registrations` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `trimester` VARCHAR(30) DEFAULT NULL
+    `year` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `registrations` WRITE;
-INSERT INTO `registrations` (`id`, `name`)
+INSERT INTO `registrations` (`id`, `trimester`, `year`)
 VALUES (
-    1, ''
+    1, '', ''
 ), (
-    2, ''
+    2, '', ''
 ), (
-    3, ''
+    3, '', ''
 ), (
-    4, ''
+    4, '', ''
 ), (
-    5, ''
+    5, '', ''
 ), (
-    6, ''
+    6, '', ''
 ), (
-    7, ''
+    7, '', ''
 ), (
-    8, ''
+    8, '', ''
+), (
+    9, '', ''
 );
 UNLOCK TABLES;
 
