@@ -349,11 +349,11 @@ SELECT * FROM `vehicle_types`;
 DROP TABLE IF EXISTS `vehicle_use_types`;
 CREATE TABLE `vehicle_use_types` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `use` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 LOCK TABLES `vehicle_use_types` WRITE;
-INSERT INTO `vehicle_use_types` (`id`, `name`)
+INSERT INTO `vehicle_use_types` (`id`, `use`)
 VALUES (
     1, ''
 ), (
