@@ -406,6 +406,16 @@ DESCRIBE `payments`;
 ## I create the pivot table movie_category
 */
 
+DROP TABLE IF EXISTS `movie_category`;
+CREATE TABLE `movie_category` (
+  `movie_id` BIGINT(20) UNSIGNED NOT NULL,
+  `category_id` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`movie_id`,`category_id`),
+  KEY `movie_category_to_category_fk` (`category_id`),
+  CONSTRAINT `movie_category_to_category_fk` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
+  CONSTRAINT `movie_category_to_movie_fk` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
 /*markdown
 ## I create the pivot table movie_content
 */
