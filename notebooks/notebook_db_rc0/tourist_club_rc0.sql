@@ -355,21 +355,11 @@ CREATE TABLE `vehicle_use_types` (
 LOCK TABLES `vehicle_use_types` WRITE;
 INSERT INTO `vehicle_use_types` (`id`, `use`)
 VALUES (
-    1, ''
+    1, 'private'
 ), (
-    2, ''
+    2, 'commercial'
 ), (
-    3, ''
-), (
-    4, ''
-), (
-    5, ''
-), (
-    6, ''
-), (
-    7, ''
-), (
-    8, ''
+    3, 'mixed'
 );
 UNLOCK TABLES;
 
