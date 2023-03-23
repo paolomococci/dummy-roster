@@ -275,63 +275,33 @@ CREATE TABLE `vehicle_models` (
 LOCK TABLES `vehicle_models` WRITE;
 INSERT INTO `vehicle_models` (`id`, `model`)
 VALUES (
-    1, ''
+    1, 'station wagon'
 ), (
-    2, ''
+    2, 'spartan'
 ), (
-    3, ''
+    3, 'young'
 ), (
-    4, ''
+    4, 'casual'
 ), (
-    5, ''
+    5, 'sporty'
 ), (
-    6, ''
+    6, 'race'
 ), (
-    7, ''
+    7, 'luxury sports'
 ), (
-    8, ''
+    8, 'luxury'
 ), (
-    9, ''
+    9, 'extra luxury'
 ), (
-    10, ''
+    10, 'off-road'
 ), (
-    11, ''
+    11, 'extreme off-road'
 ), (
-    12, ''
+    12, 'dunes'
 ), (
-    13, ''
+    13, 'amphibian'
 ), (
-    14, ''
-), (
-    15, ''
-), (
-    16, ''
-), (
-    17, ''
-), (
-    18, ''
-), (
-    19, ''
-), (
-    20, ''
-), (
-    21, ''
-), (
-    22, ''
-), (
-    23, ''
-), (
-    24, ''
-), (
-    25, ''
-), (
-    26, ''
-), (
-    27, ''
-), (
-    28, ''
-), (
-    29, ''
+    14, 'armored'
 );
 UNLOCK TABLES;
 
