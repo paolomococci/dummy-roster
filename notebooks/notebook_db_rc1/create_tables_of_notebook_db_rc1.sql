@@ -437,6 +437,12 @@ CREATE TABLE `movie_content` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
+### I check the structure of pivot table movie_content
+*/
+
+DESCRIBE `movie_content`;
+
+/*markdown
 ## I create the pivot table movie_player
 */
 
