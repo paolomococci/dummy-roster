@@ -70,7 +70,13 @@ CREATE TABLE `iso3166` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
-### I create the table languages
+### I check the structure of table iso3166
+*/
+
+DESCRIBE `iso3166`;
+
+/*markdown
+## I create the table languages
 */
 
 DROP TABLE IF EXISTS `languages`;
@@ -81,12 +87,6 @@ CREATE TABLE `languages` (
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-
-/*markdown
-### I check the structure of table iso3166
-*/
-
-DESCRIBE `iso3166`;
 
 /*markdown
 ## I create the table countries
