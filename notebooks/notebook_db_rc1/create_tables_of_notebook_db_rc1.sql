@@ -13,6 +13,24 @@ USE `notebook_db_rc1`;
 SHOW TABLES;
 
 /*markdown
+## I create the table iso3166
+*/
+
+DROP TABLE IF EXISTS `iso3166`;
+CREATE TABLE `iso3166` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `code` INT(11) NOT NULL,
+  `signature` VARCHAR(3) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code_UN` (`code`),
+  UNIQUE KEY `signature_UN` (`signature`),
+  FULLTEXT KEY `iso3166_signature_IDX` (`signature`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
 ## I create the table countries
 */
 
