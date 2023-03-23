@@ -89,6 +89,12 @@ CREATE TABLE `languages` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
+### I check the structure of table languages
+*/
+
+DESCRIBE `languages`;
+
+/*markdown
 ## I create the table countries
 */
 
