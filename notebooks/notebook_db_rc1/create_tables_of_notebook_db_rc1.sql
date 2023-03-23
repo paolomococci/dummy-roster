@@ -26,7 +26,7 @@ CREATE TABLE `districts` (
   `city_fk` BIGINT(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `district_to_city_fk` (`city_fk`),
-  CONSTRAINT `district_to_city_fk` FOREIGN KEY (`city_fk`) REFERENCES `city` (`id`) ON DELETE SET NULL
+  CONSTRAINT `district_to_city_fk` FOREIGN KEY (`city_fk`) REFERENCES `cities` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /*markdown
