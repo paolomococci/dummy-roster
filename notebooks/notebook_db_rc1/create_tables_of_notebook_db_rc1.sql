@@ -372,3 +372,26 @@ CREATE TABLE `rentals` (
 */
 
 DESCRIBE `rentals`;
+
+/*markdown
+## I create the table payments
+*/
+
+DROP TABLE IF EXISTS `payments`;
+CREATE TABLE `payments` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `amount` DECIMAL(10,2) NOT NULL,
+  `payed` DATE NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `customer_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `human_resource_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  `rental_fk` BIGINT(20) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `payment_to_customer_fk` (`customer_fk`),
+  KEY `payment_to_rental_fk` (`rental_fk`),
+  KEY `payment_to_human_resource_fk` (`human_resource_fk`),
+  CONSTRAINT `payment_to_customer_fk` FOREIGN KEY (`customer_fk`) REFERENCES `customers` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `payment_to_rental_fk` FOREIGN KEY (`rental_fk`) REFERENCES `rentals` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `payment_to_human_resource_fk` FOREIGN KEY (`human_resource_fk`) REFERENCES `human_resources` (`id`) ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
