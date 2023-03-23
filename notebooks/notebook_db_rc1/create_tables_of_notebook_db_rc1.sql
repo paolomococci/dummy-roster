@@ -232,3 +232,9 @@ CREATE TABLE `stores` (
   KEY `store_to_address_fk` (`address_fk`),
   CONSTRAINT `store_to_address_fk` FOREIGN KEY (`address_fk`) REFERENCES `address` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+/*markdown
+### I check the structure of the table stores
+*/
+
+DESCRIBE `stores`;
