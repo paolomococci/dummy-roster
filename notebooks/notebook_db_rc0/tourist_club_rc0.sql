@@ -322,7 +322,7 @@ UNLOCK TABLES;
 SELECT * FROM `vehicle_models`;
 
 /*markdown
-### vehicle_types table
+## vehicle_types table
 */
 
 DROP TABLE IF EXISTS `vehicle_types`;
@@ -330,6 +330,8 @@ CREATE TABLE `vehicle_types` (
     `id` INT(11) DEFAULT NULL,
     `type` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `vehicle_types`;
 
 LOCK TABLES `vehicle_types` WRITE;
 INSERT INTO `vehicle_types` (`id`, `type`)
