@@ -1,5 +1,10 @@
+/*markdown
+# Sample notebook_db_rc3 admin
+*/
+
 USE `notebook_db_rc3`;
 SHOW TABLES;
+
 SET FOREIGN_KEY_CHECKS = 0;
 SET @tables = NULL;
 SET GROUP_CONCAT_MAX_LEN = 32768;
