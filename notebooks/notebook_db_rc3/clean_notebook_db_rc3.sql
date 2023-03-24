@@ -1,5 +1,5 @@
 /*markdown
-# Sample notebook_db_rc3 admin
+# Clean notebook_db_rc3
 */
 
 USE `notebook_db_rc3`;
