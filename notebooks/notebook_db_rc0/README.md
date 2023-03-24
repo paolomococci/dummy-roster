@@ -1,3 +1,3 @@
 # notebook_db_rc0
 
-Simple collection of dummy database scripts dedicated for exercise purposes only.
+Simple scripts that can be used to administer an RDBMS.
