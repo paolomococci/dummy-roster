@@ -16,7 +16,8 @@ SHOW TABLES;
 DROP TABLE IF EXISTS `driver_id_types`;
 CREATE TABLE `driver_id_types` (
     `id` INT(11) DEFAULT NULL,
-    `type` VARCHAR(30) DEFAULT NULL
+    `type` VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `driver_id_types`;
@@ -525,13 +526,14 @@ CREATE TABLE `addresses` (
     `civic` VARCHAR(30) DEFAULT NULL,
     `town` VARCHAR(30) DEFAULT NULL,
     `post_code` VARCHAR(30) DEFAULT NULL,
-    `country` int(11) DEFAULT NULL,
+    `country_id` int(11) DEFAULT NULL,
+    CONSTRAINT `country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `addresses`;
 
 LOCK TABLES `addresses` WRITE;
-INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `country`)
+INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `country_id`)
 VALUES (
     1, 'main road', '123', 'old town', '00123'
 ), (
