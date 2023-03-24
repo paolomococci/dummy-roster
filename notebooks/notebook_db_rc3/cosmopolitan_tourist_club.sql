@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `driver_id_types`;
 CREATE TABLE `driver_id_types` (
     `id` INT(11) DEFAULT NULL,
     `type` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `driver_id_types`;
@@ -52,7 +52,8 @@ SELECT * FROM `driver_id_types`;
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `name` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `brands`;
