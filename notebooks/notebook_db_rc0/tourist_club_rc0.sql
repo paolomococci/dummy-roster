@@ -680,7 +680,7 @@ UNLOCK TABLES;
 SELECT * FROM `addresses`;
 
 /*markdown
-### supporting_members table
+## supporting_members table
 */
 
 DROP TABLE IF EXISTS `supporting_members`;
@@ -688,6 +688,8 @@ CREATE TABLE `supporting_members` (
     `id` INT(11) DEFAULT NULL,
     `name` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `supporting_members`;
 
 LOCK TABLES `supporting_members` WRITE;
 INSERT INTO `supporting_members` (`id`, `name`)
