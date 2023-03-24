@@ -390,21 +390,17 @@ DESCRIBE `vehicle_variant_types`;
 LOCK TABLES `vehicle_variant_types` WRITE;
 INSERT INTO `vehicle_variant_types` (`id`, `name`)
 VALUES (
-    1, ''
+    1, 'regular'
 ), (
-    2, ''
+    2, 'improved'
 ), (
-    3, ''
+    3, 'customized'
 ), (
-    4, ''
+    4, 'strong customization'
 ), (
-    5, ''
+    5, 'decorated'
 ), (
-    6, ''
-), (
-    7, ''
-), (
-    8, ''
+    6, 'rude'
 );
 UNLOCK TABLES;
 
