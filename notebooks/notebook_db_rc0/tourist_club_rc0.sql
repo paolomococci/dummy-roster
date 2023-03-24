@@ -750,7 +750,7 @@ UNLOCK TABLES;
 SELECT * FROM `member_cards`;
 
 /*markdown
-### registered_vehicles table
+## registered_vehicles table
 */
 
 DROP TABLE IF EXISTS `registered_vehicles`;
@@ -758,6 +758,8 @@ CREATE TABLE `registered_vehicles` (
     `id` INT(11) DEFAULT NULL,
     `name` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `registered_vehicles`;
 
 LOCK TABLES `registered_vehicles` WRITE;
 INSERT INTO `registered_vehicles` (`id`, `name`)
