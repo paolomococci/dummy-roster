@@ -267,7 +267,7 @@ UNLOCK TABLES;
 SELECT * FROM `countries`;
 
 /*markdown
-### vehicle_models table
+## vehicle_models table
 */
 
 DROP TABLE IF EXISTS `vehicle_models`;
@@ -275,6 +275,8 @@ CREATE TABLE `vehicle_models` (
     `id` INT(11) DEFAULT NULL,
     `model` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `vehicle_models`;
 
 LOCK TABLES `vehicle_models` WRITE;
 INSERT INTO `vehicle_models` (`id`, `model`)
