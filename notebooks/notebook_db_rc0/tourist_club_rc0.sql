@@ -10,7 +10,7 @@ USE `notebook_db_rc0`;
 SHOW TABLES;
 
 /*markdown
-### driver_id_types table
+## driver_id_types table
 */
 
 DROP TABLE IF EXISTS `driver_id_types`;
@@ -45,7 +45,7 @@ UNLOCK TABLES;
 SELECT * FROM `driver_id_types`;
 
 /*markdown
-### brand table
+## brand table
 */
 
 DROP TABLE IF EXISTS `brands`;
@@ -53,6 +53,8 @@ CREATE TABLE `brands` (
     `id` INT(11) DEFAULT NULL,
     `name` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `brands`;
 
 LOCK TABLES `brands` WRITE;
 INSERT INTO `brands` (`id`, `name`)
@@ -78,7 +80,7 @@ UNLOCK TABLES;
 SELECT * FROM `brands`;
 
 /*markdown
-### countries table
+## countries table
 */
 
 DROP TABLE IF EXISTS `countries`;
