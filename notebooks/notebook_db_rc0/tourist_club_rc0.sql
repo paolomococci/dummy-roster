@@ -411,7 +411,7 @@ UNLOCK TABLES;
 SELECT * FROM `vehicle_variant_types`;
 
 /*markdown
-### registrations table
+## registrations table
 */
 
 DROP TABLE IF EXISTS `registrations`;
@@ -420,6 +420,8 @@ CREATE TABLE `registrations` (
     `trimester` VARCHAR(30) DEFAULT NULL,
     `year` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `registrations`;
 
 LOCK TABLES `registrations` WRITE;
 INSERT INTO `registrations` (`id`, `trimester`, `year`)
