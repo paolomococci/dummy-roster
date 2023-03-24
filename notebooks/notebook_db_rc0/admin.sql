@@ -3,6 +3,14 @@
 */
 
 /*markdown
+## Show databases
+*/
+
+USE `notebook_db_rc0`;
+SHOW DATABASES;
+SHOW TABLES;
+
+/*markdown
 ## Create Database
 */
 
