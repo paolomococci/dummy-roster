@@ -715,7 +715,7 @@ UNLOCK TABLES;
 SELECT * FROM `supporting_members`;
 
 /*markdown
-### member_cards table
+## member_cards table
 */
 
 DROP TABLE IF EXISTS `member_cards`;
@@ -723,6 +723,8 @@ CREATE TABLE `member_cards` (
     `id` INT(11) DEFAULT NULL,
     `name` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `member_cards`;
 
 LOCK TABLES `member_cards` WRITE;
 INSERT INTO `member_cards` (`id`, `name`)
