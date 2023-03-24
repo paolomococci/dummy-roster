@@ -519,7 +519,7 @@ UNLOCK TABLES;
 SELECT * FROM `registrations`;
 
 /*markdown
-### addresses table
+## addresses table
 */
 
 DROP TABLE IF EXISTS `addresses`;
@@ -531,6 +531,8 @@ CREATE TABLE `addresses` (
     `post_code` VARCHAR(30) DEFAULT NULL,
     `state` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `addresses`;
 
 LOCK TABLES `addresses` WRITE;
 INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `state`)
