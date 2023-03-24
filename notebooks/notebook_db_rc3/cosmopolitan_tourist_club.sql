@@ -525,151 +525,151 @@ CREATE TABLE `addresses` (
     `civic` VARCHAR(30) DEFAULT NULL,
     `town` VARCHAR(30) DEFAULT NULL,
     `post_code` VARCHAR(30) DEFAULT NULL,
-    `state` VARCHAR(30) DEFAULT NULL
+    `country` int(11) DEFAULT NULL,
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `addresses`;
 
 LOCK TABLES `addresses` WRITE;
-INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `state`)
+INSERT INTO `addresses` (`id`, `street`, `civic`, `town`, `post_code`, `country`)
 VALUES (
-    1, 'main road', '123', '', '', ''
+    1, 'main road', '123', 'old town', '00123'
 ), (
-    2, 'fleet street', '54', '', '', ''
+    2, 'fleet street', '54', 'west city', '01010'
 ), (
-    3, 'park avenue', '12', '', '', ''
+    3, 'park avenue', '12', 'someone', '01025'
 ), (
-    4, 'fleet street', '45', '', '', ''
+    4, 'fleet street', '45', 'snow peak', '03154'
 ), (
-    5, 'rose boulevard', '87', '', '', ''
+    5, 'rose boulevard', '87', 'bay wind', '000512'
 ), (
-    6, 'main road', '34', '', '', ''
+    6, 'main road', '34', 'windward', '050114'
 ), (
-    7, 'fleet street', '23', '', '', ''
+    7, 'fleet street', '23', 'new town', '02035'
 ), (
-    8, 'mill road', '74', '', '', ''
+    8, 'mill road', '74', 'old city', '01107'
 ), (
-    9, 'main road', '1', '', '', ''
+    9, 'main road', '1', 'downwind', '02035'
 ), (
-    10, 'rose boulevard', '98', '', '', ''
+    10, 'rose boulevard', '98', 'sun kiss', '02035'
 ), (
-    11, 'fleet street', '4', '', '', ''
+    11, 'fleet street', '4', 'flake pitch', '02035'
 ), (
-    12, 'main road', '66', '', '', ''
+    12, 'main road', '66', 'sun promontory', '05740'
 ), (
-    13, 'park avenue', '51', '', '', ''
+    13, 'park avenue', '51', 'flake bay', '06002'
 ), (
-    14, 'fleet street', '12', '', '', ''
+    14, 'fleet street', '12', 'egg bay', '02035'
 ), (
-    15, 'mill road', '11', '', '', ''
+    15, 'mill road', '11', 'round mount', '02035'
 ), (
-    16, 'rose boulevard', '53', '', '', ''
+    16, 'rose boulevard', '53', 'twisted peak', '02035'
 ), (
-    17, 'fleet street', '13', '', '', ''
+    17, 'fleet street', '13', 'shaken valley', '02035'
 ), (
-    18, 'park avenue', '3', '', '', ''
+    18, 'park avenue', '3', 'comes down', '02035'
 ), (
-    19, 'fleet street', '19', '', '', ''
+    19, 'fleet street', '19', 'pale moon', '02205'
 ), (
-    20, 'avenue of oleanders', '21', '', '', ''
+    20, 'avenue of oleanders', '21', 'fresh dew', '01107'
 ), (
-    21, 'main road', '62', '', '', ''
+    21, 'main road', '62', 'horrendous heat', '05740'
 ), (
-    22, 'rose boulevard', '91', '', '', ''
+    22, 'rose boulevard', '91', 'bitter cold', '01107'
 ), (
-    23, 'fleet street', '88', '', '', ''
+    23, 'fleet street', '88', 'dummy view', '01597'
 ), (
-    24, 'park avenue', '145', '', '', ''
+    24, 'park avenue', '145', 'ruined tower', '01107'
 ), (
-    25, 'avenue of oleanders', '111', '', '', ''
+    25, 'avenue of oleanders', '111', 'green manure', '05740'
 ), (
-    26, 'fleet street', '33', '', '', ''
+    26, 'fleet street', '33', 'old tower', '03011'
 ), (
-    27, 'rose boulevard', '55', '', '', ''
+    27, 'rose boulevard', '55', 'new tower', '05740'
 ), (
-    28, 'mill road', '87', '', '', ''
+    28, 'mill road', '87', 'new view', '04120'
 ), (
-    29, 'main road', '72', '', '', ''
+    29, 'main road', '72', 'seen above', '06002'
 ), (
-    30, 'pin makers square', '99', '', '', ''
+    30, 'pin makers square', '99', 'someone new', '05740'
 ), (
-    31, 'fleet street', '105', '', '', ''
+    31, 'fleet street', '105', 'some tower', '05740'
 ), (
-    32, 'park avenue', '202', '', '', ''
+    32, 'park avenue', '202', 'five lakes', '05740'
 ), (
-    33, 'avenue of oleanders', '27', '', '', ''
+    33, 'avenue of oleanders', '27', 'three peaks', '05102'
 ), (
-    34, 'main road', '32', '', '', ''
+    34, 'main road', '32', 'cordillera', '05740'
 ), (
-    35, 'rose boulevard', '93', '', '', ''
+    35, 'rose boulevard', '93', 'enchanted', '05740'
 ), (
-    36, 'fleet street', '101', '', '', ''
+    36, 'fleet street', '101', 'broken stone', '05740'
 ), (
-    37, 'mill road', '45', '', '', ''
+    37, 'mill road', '45', 'broken vase', '05102'
 ), (
-    38, 'rose boulevard', '70', '', '', ''
+    38, 'rose boulevard', '70', 'enchanted valley', '06002'
 ), (
-    39, 'fleet street', '10', '', '', ''
+    39, 'fleet street', '10', 'misty step', '06002'
 ), (
-    40, 'avenue of oleanders', '41', '', '', ''
+    40, 'avenue of oleanders', '41', 'fortress revealed', '06002'
 ), (
-    41, 'main road', '21', '', '', ''
+    41, 'main road', '21', 'closed valley', '05740'
 ), (
-    42, 'park avenue', '75', '', '', ''
+    42, 'park avenue', '75', 'over mount', '05102'
 ), (
-    43, 'mill road', '85', '', '', ''
+    43, 'mill road', '85', 'under hill', '06002'
 ), (
-    44, 'rose boulevard', '108', '', '', ''
+    44, 'rose boulevard', '108', 'above hill', '05740'
 ), (
-    45, 'fleet street', '16', '', '', ''
+    45, 'fleet street', '16', 'jump lake', '02205'
 ), (
-    46, 'avenue of oleanders', '201', '', '', ''
+    46, 'avenue of oleanders', '201', 'summer mountain', '02205'
 ), (
-    47, 'park avenue', '19', '', '', ''
+    47, 'park avenue', '19', 'spring lake', '06002'
 ), (
-    48, 'main road', '29', '', '', ''
+    48, 'main road', '29', 'winter lake', '02205'
 ), (
-    49, 'furnace road', '48', '', '', ''
+    49, 'furnace road', '48', 'winter sea', '05740'
 ), (
-    50, 'rose boulevard', '67', '', '', ''
+    50, 'rose boulevard', '67', 'green sea', '05102'
 ), (
-    51, 'fleet street', '56', '', '', ''
+    51, 'fleet street', '56', 'wild apricot', '06002'
 ), (
-    52, 'avenue of oleanders', '57', '', '', ''
+    52, 'avenue of oleanders', '57', 'docile hill', '03011'
 ), (
-    53, 'park avenue', '70', '', '', ''
+    53, 'park avenue', '70', 'some fish', '02205'
 ), (
-    54, 'mill road', '65', '', '', ''
+    54, 'mill road', '65', 'fanged boar', '05740'
 ), (
-    55, 'main road', '50', '', '', ''
+    55, 'main road', '50', 'striped bear', '04120'
 ), (
-    56, 'rose boulevard', '68', '', '', ''
+    56, 'rose boulevard', '68', 'golden cat', '03011'
 ), (
-    57, 'furnace road', '102', '', '', ''
+    57, 'furnace road', '102', 'gentle mountain', '02205'
 ), (
-    58, 'park avenue', '145', '', '', ''
+    58, 'park avenue', '145', 'ivory tower', '03011'
 ), (
-    59, 'avenue of oleanders', '65', '', '', ''
+    59, 'avenue of oleanders', '65', 'cheese', '02205'
 ), (
-    60, 'fleet street', '88', '', '', ''
+    60, 'fleet street', '88', 'angry lion', '04120'
 ), (
-    61, 'pin makers square', '98', '', '', ''
+    61, 'pin makers square', '98', 'stormy waters', '05102'
 ), (
-    62, 'park avenue', '41', '', '', ''
+    62, 'park avenue', '41', 'silver fish', '03011'
 ), (
-    63, 'mill road', '44', '', '', ''
+    63, 'mill road', '44', 'steel tower', '05740'
 ), (
-    64, 'main road', '32', '', '', ''
+    64, 'main road', '32', 'beech forest', '02205'
 ), (
-    65, 'rose boulevard', '22', '', '', ''
+    65, 'rose boulevard', '22', 'green peak', '02205'
 ), (
-    66, 'avenue of oleanders', '10', '', '', ''
+    66, 'avenue of oleanders', '10', 'poplar grove', '05102'
 ), (
-    67, 'fleet street', '20', '', '', ''
+    67, 'fleet street', '20', 'silver forest', '05102'
 ), (
-    68, 'park avenue', '53', '', '', ''
+    68, 'park avenue', '53', 'parent forest', '06002'
 ), (
-    69, 'main road', '92', '', '', ''
+    69, 'main road', '92', 'green ocean', '02205'
 );
 UNLOCK TABLES;
 
