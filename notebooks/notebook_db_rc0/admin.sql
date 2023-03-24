@@ -3,15 +3,19 @@
 */
 
 /*markdown
-## Show databases
+## Use notebook_db_rc0
 */
 
 USE `notebook_db_rc0`;
-SHOW DATABASES;
-SHOW TABLES;
 
 /*markdown
-## Create Database
+## Show databases
+*/
+
+SHOW DATABASES;
+
+/*markdown
+## To create a new database and assign its privileges
 */
 
 CREATE DATABASE notebook_db_rcn;
