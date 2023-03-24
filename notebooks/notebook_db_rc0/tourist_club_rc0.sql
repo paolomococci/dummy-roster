@@ -89,6 +89,8 @@ CREATE TABLE `countries` (
     `name` VARCHAR(30) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
+DESCRIBE `countries`;
+
 LOCK TABLES `countries` WRITE;
 INSERT INTO `countries` (`id`, `name`)
 VALUES (
