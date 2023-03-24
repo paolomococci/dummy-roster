@@ -88,7 +88,8 @@ SELECT * FROM `brands`;
 DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `name` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `countries`;
@@ -275,7 +276,8 @@ SELECT * FROM `countries`;
 DROP TABLE IF EXISTS `vehicle_models`;
 CREATE TABLE `vehicle_models` (
     `id` INT(11) DEFAULT NULL,
-    `model` VARCHAR(30) DEFAULT NULL
+    `model` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `vehicle_models`;
@@ -330,7 +332,8 @@ SELECT * FROM `vehicle_models`;
 DROP TABLE IF EXISTS `vehicle_types`;
 CREATE TABLE `vehicle_types` (
     `id` INT(11) DEFAULT NULL,
-    `type` VARCHAR(30) DEFAULT NULL
+    `type` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `vehicle_types`;
@@ -359,7 +362,8 @@ SELECT * FROM `vehicle_types`;
 DROP TABLE IF EXISTS `vehicle_use_types`;
 CREATE TABLE `vehicle_use_types` (
     `id` INT(11) DEFAULT NULL,
-    `use` VARCHAR(30) DEFAULT NULL
+    `use` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `vehicle_use_types`;
@@ -384,7 +388,8 @@ SELECT * FROM `vehicle_use_types`;
 DROP TABLE IF EXISTS `vehicle_variant_types`;
 CREATE TABLE `vehicle_variant_types` (
     `id` INT(11) DEFAULT NULL,
-    `variant` VARCHAR(30) DEFAULT NULL
+    `variant` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `vehicle_variant_types`;
@@ -416,7 +421,8 @@ DROP TABLE IF EXISTS `registrations`;
 CREATE TABLE `registrations` (
     `id` INT(11) DEFAULT NULL,
     `trimester` VARCHAR(30) DEFAULT NULL,
-    `year` VARCHAR(30) DEFAULT NULL
+    `year` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `registrations`;
@@ -528,6 +534,7 @@ CREATE TABLE `addresses` (
     `town` VARCHAR(30) DEFAULT NULL,
     `post_code` VARCHAR(30) DEFAULT NULL,
     `country_id` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`),
     CONSTRAINT `country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE SET NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
@@ -685,7 +692,8 @@ SELECT * FROM `addresses`;
 DROP TABLE IF EXISTS `supporting_members`;
 CREATE TABLE `supporting_members` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `name` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `supporting_members`;
@@ -802,7 +810,8 @@ SELECT * FROM `supporting_members`;
 DROP TABLE IF EXISTS `member_cards`;
 CREATE TABLE `member_cards` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `name` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `member_cards`;
@@ -837,7 +846,8 @@ SELECT * FROM `member_cards`;
 DROP TABLE IF EXISTS `registered_vehicles`;
 CREATE TABLE `registered_vehicles` (
     `id` INT(11) DEFAULT NULL,
-    `name` VARCHAR(30) DEFAULT NULL
+    `name` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `registered_vehicles`;
