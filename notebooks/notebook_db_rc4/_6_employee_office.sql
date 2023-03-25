@@ -22,3 +22,5 @@ CREATE TABLE `employee_office` (
   CONSTRAINT `employee_office_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`),
   CONSTRAINT `employee_office_to_offices_fk` FOREIGN KEY (`office_id`) REFERENCES `offices` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `employee_office`;
