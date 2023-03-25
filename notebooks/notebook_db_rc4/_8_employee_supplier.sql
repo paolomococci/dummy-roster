@@ -19,8 +19,8 @@ CREATE TABLE `employee_supplier` (
   `employee_id` BIGINT(20) UNSIGNED NOT NULL,
   `supplier_id` BIGINT(20) UNSIGNED NOT NULL,
   PRIMARY KEY (`employee_id`,`supplier_id`),
-  CONSTRAINT `employee_supplier_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`),
-  CONSTRAINT `employee_supplier_to_suppliers_fk` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`)
+  CONSTRAINT `employee_supplier_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `employee_supplier_to_suppliers_fk` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `employee_supplier`;
