@@ -19,8 +19,8 @@ CREATE TABLE `employee_carrier` (
   `employee_id` BIGINT(20) UNSIGNED NOT NULL,
   `carrier_id` BIGINT(20) UNSIGNED NOT NULL,
   PRIMARY KEY (`employee_id`,`carrier_id`),
-  CONSTRAINT `employee_carrier_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`),
-  CONSTRAINT `employee_carrier_to_carriers_fk` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`)
+  CONSTRAINT `employee_carrier_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `employee_carrier_to_carriers_fk` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `employee_carrier`;
