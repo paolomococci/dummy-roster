@@ -22,3 +22,5 @@ CREATE TABLE `employee_supplier` (
   CONSTRAINT `employee_supplier_to_employees_fk` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`),
   CONSTRAINT `employee_supplier_to_suppliers_fk` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `employee_supplier`;
