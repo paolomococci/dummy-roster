@@ -22,3 +22,5 @@ CREATE TABLE `carrier_customer` (
   CONSTRAINT `carrier_customer_to_carriers_fk` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`),
   CONSTRAINT `carrier_customer_to_customers_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+DESCRIBE `carrier_customer`;
