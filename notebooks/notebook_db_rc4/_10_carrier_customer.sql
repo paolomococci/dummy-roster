@@ -19,8 +19,8 @@ CREATE TABLE `carrier_customer` (
   `carrier_id` BIGINT(20) UNSIGNED NOT NULL,
   `customer_id` BIGINT(20) UNSIGNED NOT NULL,
   PRIMARY KEY (`carrier_id`,`customer_id`),
-  CONSTRAINT `carrier_customer_to_carriers_fk` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`),
-  CONSTRAINT `carrier_customer_to_customers_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
+  CONSTRAINT `carrier_customer_to_carriers_fk` FOREIGN KEY (`carrier_id`) REFERENCES `carriers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `carrier_customer_to_customers_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `carrier_customer`;
