@@ -9,3 +9,7 @@
 USE `notebook_db_rc4`;
 
 SHOW TABLES;
+
+/*markdown
+## I create the pivot table carrier_supplier
+*/
