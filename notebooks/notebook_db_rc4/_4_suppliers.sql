@@ -7,6 +7,7 @@
 */
 
 USE `notebook_db_rc4`;
+
 SHOW TABLES;
 
 /*markdown
