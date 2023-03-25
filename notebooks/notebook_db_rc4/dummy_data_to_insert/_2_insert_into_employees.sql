@@ -18,3 +18,9 @@ INSERT INTO `employees` (`name`, `email`, `hired`, `salary`)
 VALUES (
         'John Doe', 'john.doe@example.local', '2021-10-12', 1350.00
     );
+
+/*markdown
+### I clear table employees of all previously entered data
+*/
+
+DELETE FROM `employees`;
