@@ -17,6 +17,24 @@ SHOW TABLES;
 INSERT INTO `employees` (`name`, `email`, `hired`, `salary`)
 VALUES (
         'John Doe', 'john.doe@example.local', '2021-10-12', 1350.00
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
+    ), (
+        '', '@example.local', ''
     );
 
 /*markdown
