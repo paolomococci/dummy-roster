@@ -9,3 +9,7 @@
 USE `notebook_db_rc4`;
 
 SHOW TABLES;
+
+/*markdown
+## I insert some data in the table employees
+*/
