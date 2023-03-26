@@ -22,19 +22,23 @@ VALUES (
     ), (
         'Johnny Doe', 'johnny.doe@example.local', '2022-06-20', 1290.00
     ), (
-        '', '@example.local', ''
+        'Janie Doe', 'janie.doe@example.local', '2020-03-07', 1360.00
     ), (
-        '', '@example.local', ''
+        'Joe Bloggs', 'joe.bloggs@example.local', '2020-04-19', 1670.00
     ), (
-        '', '@example.local', ''
+        'John Smith', 'john.smith@example.local', '2021-01-12', 1750.00
     ), (
-        '', '@example.local', ''
+        'Baby Doe', 'baby.doe@example.local', '2022-05-12', 1650.00
     ), (
-        '', '@example.local', ''
+        'Fred Bloggs', 'fred.bloggs@example.local', '2021-12-20',1450.00
     ), (
-        '', '@example.local', ''
+        'Bill Taylor', 'bill.taylor@example.local', '2020-11-19', 1680.00
     ), (
-        '', '@example.local', ''
+        'Joe Average', 'joe.average@example.local', '2021-10-10', 1700.00
+    ), (
+        'Richard Roe', 'richard.roe@example.local', '2019-10-09', 1600.00
+    ), (
+        'Joe Citizen', 'joe.citizen@example.local', '2020-10-20', 1500.00
     );
 
 /*markdown
