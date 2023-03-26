@@ -36,3 +36,19 @@ SELECT * FROM `employee_office`;
 */
 
 DELETE FROM `employee_office`;
+
+/*markdown
+## Now I select each employee by showing the office they belong to
+*/
+
+/*markdown
+### using the 'INNER JOIN' statement
+*/
+
+SELECT 
+    e.email AS e_email, 
+    o.email AS o_email
+FROM employee_office eo 
+INNER JOIN offices o ON eo.office_id = o.id 
+INNER JOIN employees e ON eo.employee_id = e.id 
+ORDER BY o.id;
