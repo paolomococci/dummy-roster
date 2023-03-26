@@ -20,7 +20,7 @@ VALUES (
     ), (
         'Jane Doe', 'jane.doe@example.local', '2019-05-05', 1450.00
     ), (
-        '', '@example.local', ''
+        'Johnny Doe', 'johnny.doe@example.local', '2022-06-20', 1290.00
     ), (
         '', '@example.local', ''
     ), (
