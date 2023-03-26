@@ -16,15 +16,15 @@ SHOW TABLES;
 
 INSERT INTO `offices` (`name`, `email`, `description`)
 VALUES (
-        '', '@example.local', ''
+        'direction', 'direction@example.local', 'some description of direction office'
     ), (
-        '', '@example.local', ''
+        'human resources', 'human.resources@example.local', 'some description of human resources office'
     ), (
-        '', '@example.local', ''
+        'research and development', 'research.development@example.local', 'some description of research and development office'
     ), (
-        '', '@example.local', ''
+        'purchases', 'purchases@example.local', 'some description of purchases office'
     ), (
-        '', '@example.local', ''
+        'shipments', 'shipments@example.local', 'some description of shipments office'
     ), (
-        '', '@example.local', ''
+        'marketing', 'marketing@example.local', 'some description of marketing office'
     );
