@@ -30,7 +30,7 @@ CREATE TABLE `employees` (
 DESCRIBE `employees`;
 
 /*markdown
-### I select all the data in table employees
+### I select all records in table employees
 */
 
 SELECT * FROM `employees` ORDER BY `email`;
