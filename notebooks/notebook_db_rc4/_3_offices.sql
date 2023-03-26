@@ -27,3 +27,9 @@ CREATE TABLE `offices` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `offices`;
+
+/*markdown
+### I select all records in table offices
+*/
+
+SELECT * FROM `offices` ORDER BY `email`;
