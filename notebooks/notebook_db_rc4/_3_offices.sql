@@ -33,3 +33,7 @@ DESCRIBE `offices`;
 */
 
 SELECT * FROM `offices` ORDER BY `email`;
+
+/*markdown
+## Now I select each office showing all the employees working there
+*/
