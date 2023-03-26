@@ -28,5 +28,29 @@ SELECT * FROM `employees` ORDER BY `salary` DESC;
 
 INSERT INTO `employee_office` (`employee_id`, `office_id`)
 VALUES (
-        
+        19, 7
+    ), (
+        15, 7
+    ), (
+        17, 8
+    ), (
+        23, 9
+    ), (
+        16, 9
+    ), (
+        22, 9
+    ), (
+        18, 10
+    ), (
+        16, 10
+    ), (
+        20, 11
+    ), (
+        21, 11
+    ), (
+        24, 12
+    ), (
+        25, 12
+    ), (
+        21, 12
     );
