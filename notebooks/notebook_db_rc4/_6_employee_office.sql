@@ -30,3 +30,9 @@ DESCRIBE `employee_office`;
 */
 
 SELECT * FROM `employee_office`;
+
+/*markdown
+### I delete all records in table employee_office
+*/
+
+DELETE FROM `employee_office`;
