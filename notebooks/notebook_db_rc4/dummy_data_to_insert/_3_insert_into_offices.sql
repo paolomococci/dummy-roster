@@ -28,3 +28,9 @@ VALUES (
     ), (
         'marketing', 'marketing@example.local', 'some description of marketing office'
     );
+
+/*markdown
+### I clear table offices of all previously entered data
+*/
+
+DELETE FROM `employees`;
