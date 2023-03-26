@@ -37,3 +37,15 @@ SELECT * FROM `offices` ORDER BY `email`;
 /*markdown
 ## Now I select each office showing all the employees working there
 */
+
+/*markdown
+### using the 'INNER JOIN' statement
+*/
+
+SELECT 
+    o.name AS o_name, o.email AS o_email, o.description,
+    e.name AS e_name, e.email AS e_email, e.salary
+FROM employee_office eo 
+INNER JOIN offices o ON eo.office_id = o.id 
+INNER JOIN employees e ON eo.employee_id = e.id 
+ORDER BY e.salary DESC;
