@@ -18,7 +18,7 @@ INSERT INTO `employees` (`name`, `email`, `hired`, `salary`)
 VALUES (
         'John Doe', 'john.doe@example.local', '2021-10-12', 1350.00
     ), (
-        '', '@example.local', ''
+        'Jane Doe', 'jane.doe@example.local', '2019-05-05', 1450.00
     ), (
         '', '@example.local', ''
     ), (
