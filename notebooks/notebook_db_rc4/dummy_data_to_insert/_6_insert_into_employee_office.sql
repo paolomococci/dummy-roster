@@ -20,4 +20,13 @@ SELECT * FROM `offices` ORDER BY `email`;
 ### I select all records in table employees
 */
 
-SELECT * FROM `employees` ORDER BY `email`;
+SELECT * FROM `employees` ORDER BY `salary` DESC;
+
+/*markdown
+## I add the references that connect each employee to their office
+*/
+
+INSERT INTO `employee_office` (`employee_id`, `office_id`)
+VALUES (
+        
+    );
