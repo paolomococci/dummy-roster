@@ -24,3 +24,9 @@ CREATE TABLE `employee_office` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DESCRIBE `employee_office`;
+
+/*markdown
+### I select all records in table employee_office
+*/
+
+SELECT * FROM `employee_office`;
