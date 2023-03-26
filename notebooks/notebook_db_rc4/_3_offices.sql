@@ -54,7 +54,7 @@ ORDER BY e.salary DESC;
 ## How many employees does each office count
 */
 
-SELECT o.name AS office_name
+SELECT o.name AS office_name, count(e.id) AS office_workers
 FROM employee_office eo 
 INNER JOIN offices o ON eo.office_id = o.id 
 INNER JOIN employees e ON eo.employee_id = e.id 
