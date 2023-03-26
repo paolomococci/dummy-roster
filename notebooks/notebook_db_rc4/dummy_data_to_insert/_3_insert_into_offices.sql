@@ -33,4 +33,4 @@ VALUES (
 ### I clear table offices of all previously entered data
 */
 
-DELETE FROM `employees`;
+DELETE FROM `offices`;
