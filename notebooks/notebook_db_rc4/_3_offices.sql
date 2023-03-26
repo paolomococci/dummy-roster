@@ -43,18 +43,18 @@ SELECT * FROM `offices` ORDER BY `email`;
 */
 
 SELECT 
-    o.name AS o_name, o.email AS o_email, o.description,
-    e.name AS e_name, e.email AS e_email, e.salary
+    o.name AS office_names, o.email AS office_emails, o.description AS office_descriptions,
+    e.name AS employee_names, e.email AS employee_emails, e.salary AS employee_salaries
 FROM employee_office eo 
 INNER JOIN offices o ON eo.office_id = o.id 
 INNER JOIN employees e ON eo.employee_id = e.id 
 ORDER BY e.salary DESC;
 
 /*markdown
-## How many employees does each office count
+## How many employees does each office count?
 */
 
-SELECT o.name AS office_name, count(e.id) AS office_workers
+SELECT o.name AS office_names, count(e.id) AS number_of_employees_in_each_office
 FROM employee_office eo 
 INNER JOIN offices o ON eo.office_id = o.id 
 INNER JOIN employees e ON eo.employee_id = e.id 
