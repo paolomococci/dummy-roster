@@ -14,7 +14,7 @@ SHOW TABLES;
 ### I select all records in table offices
 */
 
-SELECT * FROM `offices` ORDER BY `email`;
+SELECT * FROM `offices` ORDER BY `id`;
 
 /*markdown
 ### I select all records in table employees
