@@ -6,7 +6,7 @@
 ## select use the database notebook_db_rc4
 */
 
-USE `notebook_db_rc1`;
+USE `notebook_db_rc4`;
 SHOW TABLES;
 
 SET FOREIGN_KEY_CHECKS = 0;
