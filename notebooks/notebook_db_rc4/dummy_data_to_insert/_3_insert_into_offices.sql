@@ -16,7 +16,7 @@ SHOW TABLES;
 
 INSERT INTO `offices` (`name`, `email`, `description`)
 VALUES (
-        'management', 'direction@example.local', 'some description of direction office'
+        'management', 'management@example.local', 'some description of management office'
     ), (
         'human resources', 'human.resources@example.local', 'some description of human resources office'
     ), (
