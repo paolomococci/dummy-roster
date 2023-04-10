@@ -1,6 +1,6 @@
 SHOW DATABASES;
 
-USE `notebook_db_rc0`;
+USE `notebook_db_rc2`;
 
 SHOW TABLES;
 
